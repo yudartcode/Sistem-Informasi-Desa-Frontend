@@ -24,9 +24,11 @@ export default new Router({
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
-          name: 'Penduduk',
-          path: 'infodesa/penduduk',
-          component: () => import('@/views/dashboard/infodesa/penduduk'),
+          path: '/',
+          component: () => import('@/views/dashboard/pages/Tes'),
+          children: [
+
+          ],
         },
         {
           name: 'Notifications',
@@ -51,7 +53,7 @@ export default new Router({
         },
         // Maps
         {
-          name: 'Google Maps',
+          name: 'Letak Geografis',
           path: 'maps/google-maps',
           component: () => import('@/views/dashboard/maps/GoogleMaps'),
         },
