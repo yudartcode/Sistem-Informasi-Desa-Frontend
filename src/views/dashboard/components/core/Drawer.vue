@@ -102,9 +102,9 @@
         {
           icon: 'mdi-file-document-multiple',
           title: 'Info Desa',
+          // to: '/infodesa',
           children: [
             {
-              icon: 'mdi-view-dashboard',
               title: 'penduduk',
               to: '/infodesa/penduduk',
             },
@@ -158,7 +158,7 @@
         {
           title: 'Struktur Organisasi',
           icon: 'mdi-sitemap',
-          to: '/components/typography',
+          to: '/infodesa/penduduk',
         },
         {
           title: 'Visi Misi',

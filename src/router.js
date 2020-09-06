@@ -19,21 +19,14 @@ export default new Router({
         },
         // Pages
         {
-          name: 'User Profile',
-          path: 'pages/user',
-          component: () => import('@/views/dashboard/pages/UserProfile'),
+          name: 'Penduduk',
+          path: 'infodesa/penduduk',
+          component: () => import('@/views/dashboard/infodesa/Penduduk'),
         },
         {
-          path: '/',
-          component: () => import('@/views/dashboard/pages/Tes'),
-          children: [
-
-          ],
-        },
-        {
-          name: 'Notifications',
-          path: 'components/notifications',
-          component: () => import('@/views/dashboard/component/Notifications'),
+          name: 'Penduduk',
+          path: 'infodesa/penduduk',
+          component: () => import('@/views/dashboard/infodesa/Penduduk'),
         },
         {
           name: 'Visi Misi',
