@@ -17,12 +17,7 @@ export default new Router({
           path: '',
           component: () => import('@/views/dashboard/Dashboard'),
         },
-        // Pages
-        {
-          name: 'Penduduk',
-          path: 'infodesa/penduduk',
-          component: () => import('@/views/dashboard/infodesa/Penduduk'),
-        },
+        // Info Desa
         {
           name: 'Penduduk',
           path: 'infodesa/penduduk',

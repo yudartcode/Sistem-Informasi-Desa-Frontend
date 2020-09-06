@@ -102,11 +102,11 @@
         {
           icon: 'mdi-file-document-multiple',
           title: 'Info Desa',
-          // to: '/infodesa',
+          group: '/infodesa',
           children: [
             {
-              title: 'penduduk',
-              to: '/infodesa/penduduk',
+              title: 'Penduduk',
+              to: 'penduduk',
             },
             {
               icon: '',
