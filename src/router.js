@@ -54,6 +54,11 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/Produkunggulan'),
         },
         {
+          name: 'List Penduduk',
+          path: 'kependudukan/Listpenduduk',
+          component: () => import('@/views/dashboard/kependudukan/Listpenduduk'),
+        },
+        {
           name: 'Visi Misi',
           path: 'components/icons',
           component: () => import('@/views/dashboard/component/Icons'),

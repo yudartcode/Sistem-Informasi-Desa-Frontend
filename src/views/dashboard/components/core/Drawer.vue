@@ -142,7 +142,7 @@
         {
           title: 'Kependudukan',
           icon: 'mdi-account-group',
-          to: '/tables/regular-tables',
+          group: '/kependudukan',
           children: [
             {
               icon: 'mdi-home-heart',
@@ -151,8 +151,8 @@
             },
             {
               icon: '',
-              title: 'Penduduk',
-              to: '',
+              title: 'List Penduduk',
+              to: 'Listpenduduk',
             }],
         },
         {
