@@ -18,11 +18,14 @@ export default new Router({
           component: () => import('@/views/dashboard/Dashboard'),
         },
         // Info Desa
+<<<<<<< HEAD
         {
           name: 'Penduduk',
           path: 'infodesa/penduduk/Penduduk',
           component: () => import('@/views/dashboard/infodesa/penduduk/Penduduk'),
         },
+=======
+>>>>>>> adcba856a841606d9ca20227749bd5edf186a628
         {
           name: 'Sarana Penunjang',
           path: 'infodesa/Saranapenunjang',

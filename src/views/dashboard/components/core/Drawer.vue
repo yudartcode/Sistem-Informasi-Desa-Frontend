@@ -105,8 +105,13 @@
           group: '/infodesa',
           children: [
             {
+<<<<<<< HEAD
               title: 'penduduk',
               to: 'penduduk/Penduduk',
+=======
+              title: 'Penduduk',
+              to: 'penduduk',
+>>>>>>> adcba856a841606d9ca20227749bd5edf186a628
             },
             {
               icon: '',
