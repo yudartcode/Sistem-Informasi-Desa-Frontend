@@ -102,41 +102,41 @@
         {
           icon: 'mdi-file-document-multiple',
           title: 'Info Desa',
-          // to: '/infodesa',
+          group: '/infodesa',
           children: [
             {
               title: 'penduduk',
-              to: '/infodesa/penduduk',
+              to: 'penduduk/Penduduk',
             },
             {
               icon: '',
               title: 'Sarana Penunjang',
-              to: '',
+              to: 'Saranapenunjang',
             },
             {
               icon: '',
               title: 'Perangkat Desa',
-              to: '',
+              to: 'perangkatdesa/Perangkatdesa',
             },
             {
               icon: '',
               title: 'Administrasi',
-              to: '',
+              to: 'administrasi/Administrasi',
             },
             {
               icon: '',
               title: 'Umum',
-              to: '',
+              to: 'umum/Umum',
             },
             {
               icon: '',
               title: 'Potensi Desa',
-              to: '',
+              to: 'Potensi',
             },
             {
               icon: '',
               title: 'Produk Unggulan',
-              to: '',
+              to: 'Produkunggulan',
             }],
         },
         {
@@ -158,7 +158,7 @@
         {
           title: 'Struktur Organisasi',
           icon: 'mdi-sitemap',
-          to: '/infodesa/penduduk',
+          to: '/tables/regular-tables',
         },
         {
           title: 'Visi Misi',

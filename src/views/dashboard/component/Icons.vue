@@ -4,10 +4,6 @@
     fluid
     tag="section"
   >
-    <base-v-component
-      heading="Icons"
-      link="components/icons"
-    />
 
     <v-row>
       <v-col cols="12">

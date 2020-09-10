@@ -6,25 +6,28 @@
   >
 
         <base-material-card
-      icon="mdi-sitemap"
+      icon="mdi-file"
       class="px-5 py-3"
-      title="Struktur Desa"
+      title="Input Data Umum"
     >
-                <v-col sm="4">
+                <v-col sm="2">
                   <v-text-field
-                    label="Kepada Desa"
+                    label="Luas Desa"
                   />
                   <v-text-field
                     label="Jumlah Dusun"
                   />
                   <v-text-field
-                    label="Kepada urusan tata usaha dan umum"
+                    label="Batas Wilayah Barat"
                   />
                   <v-text-field
-                    label="Kepada urusan Ke uangan"
+                    label="Batas Wilayah Utara"
                   />
                   <v-text-field
-                    label="Kepada urusan Perencanaan"
+                    label="Batas Wilayah Selatan"
+                  />
+                  <v-text-field
+                    label="Batas Wilayah Timur"
                   />
                   <v-text-field
                     label="Jarak dari Pusat Kecamatan"
@@ -59,8 +62,14 @@
     data: () => ({
     }),
     submit () {
+      this.$v.$touch()
     },
     clear () {
+      this.$v.$reset()
+      this.name = ''
+      this.email = ''
+      this.select = null
+      this.checkbox = false
     },
   }
 </script>

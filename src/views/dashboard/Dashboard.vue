@@ -186,7 +186,7 @@
         lg="3"
       >
         <base-material-stats-card
-          color="primary"
+          color="blue"
           icon="mdi-poll"
           title="Website Visits"
           value="75.521"
