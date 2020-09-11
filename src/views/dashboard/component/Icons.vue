@@ -5,14 +5,11 @@
     tag="section"
   >
 
-    <v-row>
-      <v-col cols="12">
-        <base-material-card color="green">
-          <template v-slot:heading>
-            <div class="display-2 font-weight-light">
-              Visi Misi
-            </div>
-          </template>
+    <base-material-card
+      icon="mdi-file"
+      class="px-5 py-3"
+      title="Visi Misi"
+    >
 
           <v-row
             align="center"
@@ -29,13 +26,11 @@
                   cols="12"
                   class="text-right"
                 >
-                  <v-btn color="secondary">Simpan</v-btn>
+                  <v-btn color="blue">Simpan</v-btn>
                   <v-btn color="error">Batal</v-btn>
                 </v-col>
           </v-row>
         </base-material-card>
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 
