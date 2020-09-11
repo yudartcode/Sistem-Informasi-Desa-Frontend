@@ -17,6 +17,12 @@ export default new Router({
           path: '',
           component: () => import('@/views/dashboard/Dashboard'),
         },
+        // Login
+        {
+          name: 'Login',
+          path: 'pages/Login',
+          component: () => import('@/views/dashboard/pages/Login'),
+        },
         // Info Desa
         {
           name: 'Penduduk',
@@ -57,6 +63,21 @@ export default new Router({
           name: 'List Penduduk',
           path: 'kependudukan/Listpenduduk',
           component: () => import('@/views/dashboard/kependudukan/Listpenduduk'),
+        },
+        {
+          name: 'Kartu Keluarga',
+          path: 'kependudukan/KK/Kartukeluarga',
+          component: () => import('@/views/dashboard/kependudukan/KK/Kartukeluarga'),
+        },
+        {
+          name: 'Input Data',
+          path: 'kependudukan/inputdata/Inputdata',
+          component: () => import('@/views/dashboard/kependudukan/inputdata/Inputdata'),
+        },
+        {
+          name: 'Report',
+          path: 'kependudukan/Report',
+          component: () => import('@/views/dashboard/kependudukan/Report'),
         },
         {
           name: 'Visi Misi',

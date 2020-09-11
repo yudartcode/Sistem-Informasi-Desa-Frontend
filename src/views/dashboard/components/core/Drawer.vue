@@ -145,9 +145,19 @@
           group: '/kependudukan',
           children: [
             {
-              icon: 'mdi-home-heart',
+              icon: '',
               title: 'Kartu Keluarga',
-              to: '',
+              to: 'KK/Kartukeluarga',
+            },
+            {
+              icon: '',
+              title: 'Inpu tdata',
+              to: 'inputdata/Inputdata',
+            },
+            {
+              icon: '',
+              title: 'Report',
+              to: 'Report',
             },
             {
               icon: '',

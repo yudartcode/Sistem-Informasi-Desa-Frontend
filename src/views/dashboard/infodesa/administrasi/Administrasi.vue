@@ -8,7 +8,7 @@
         <base-material-card
       icon="mdi-file"
       class="px-5 py-3"
-      title="Input Penduduk"
+      title="Administrasi"
     >
                 <v-col sm="4">
                   <v-text-field
