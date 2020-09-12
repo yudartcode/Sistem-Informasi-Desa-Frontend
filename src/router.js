@@ -8,6 +8,11 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      name: 'login',
+      path: '/login',
+      component: () => import('@/views/dashboard/pages/Login'),
+    },
+    {
       path: '/',
       component: () => import('@/views/dashboard/Index'),
       children: [
@@ -16,12 +21,6 @@ export default new Router({
           name: 'Dashboard',
           path: '',
           component: () => import('@/views/dashboard/Dashboard'),
-        },
-        // Login
-        {
-          name: 'Login',
-          path: 'pages/Login',
-          component: () => import('@/views/dashboard/pages/Login'),
         },
         // Info Desa
         {
