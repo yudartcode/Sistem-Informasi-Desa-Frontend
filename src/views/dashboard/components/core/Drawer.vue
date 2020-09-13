@@ -147,22 +147,17 @@
             {
               icon: '',
               title: 'Kartu Keluarga',
-              to: 'KK/Kartukeluarga',
+              to: 'kartu-keluarga/index',
             },
             {
               icon: '',
-              title: 'Inpu tdata',
-              to: 'inputdata/Inputdata',
+              title: 'Penduduk',
+              to: 'penduduk/index',
             },
             {
               icon: '',
               title: 'Report',
               to: 'Report',
-            },
-            {
-              icon: '',
-              title: 'List Penduduk',
-              to: 'Listpenduduk',
             }],
         },
         {
