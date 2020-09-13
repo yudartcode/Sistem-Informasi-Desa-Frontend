@@ -9,39 +9,19 @@
       title="List Penduduk"
       class="px-5 py-3"
     >
-      <v-simple-table>
-        <thead>
-          <tr>
-            <th class="primary--text">
-              ID
-            </th>
-            <th class="primary--text">
-              Name
-            </th>
-            <th class="primary--text">
-              Country
-            </th>
-            <th class="primary--text">
-              City
-            </th>
-            <th class="text-right primary--text">
-              Salary
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Dakota Rice</td>
-            <td>Niger</td>
-            <td>Oud-Turnhout</td>
-            <td class="text-right">
-              $36,738
-            </td>
-          </tr>
-        </tbody>
-      </v-simple-table>
+      <v-card-title>
+        <v-text-field
+          v-model="search"
+          label="Search"
+          single-line
+          hide-details
+        />
+      </v-card-title>
+      <v-data-table
+        :headers="headers"
+        :items="data_penduduk"
+        :search="search"
+      />
     </base-material-card>
   </v-container>
 </template>
@@ -49,7 +29,43 @@
   export default {
     name: 'ListPenduduk',
 
-    data: () => ({
-    }),
+    data () {
+      return {
+        search: '',
+        headers: [
+          { text: 'NIK', value: 'id' },
+          { text: 'Nama', value: 'nama' },
+          { text: 'Tempat Lahir', value: 'tempat_lahir' },
+          { text: 'Tanggal Lahir', value: 'tanggal_lahir' },
+          { text: 'Alamat', value: 'alamat' },
+          { text: 'Agama', value: 'agama' },
+          { text: 'Perkawinan', value: 'perkawinan' },
+          { text: 'Kewarganegaraan', value: 'kewarganegaraan' },
+          { text: 'Status Hidup', value: 'status_hidup' },
+        ],
+        data_penduduk: [],
+        page: 0,
+        lengthPage: 0,
+      }
+    },
+    created () {
+      this.go()
+    },
+    methods: {
+      go () {
+        const url = '/penduduk?page=' + this.page
+        this.axios.get(url)
+          .then((response) => {
+            const { data } = response.data
+            const { meta } = data
+            this.data_penduduk = data
+            this.lengthPage = meta.last_page
+            this.page = meta.current_page
+          })
+          .catch((error) => {
+            console.log(error.response)
+          })
+      },
+    },
   }
 </script>
