@@ -7,9 +7,10 @@
       v-model="alert"
       dense
       text
+      outlined
       type="success"
     >
-      Penambahan <strong>Kartu Keluarga</strong> Berhasil !
+      Data <strong>Kartu Keluarga</strong> Berhasil Ditambahkan!
     </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
