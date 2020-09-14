@@ -19,7 +19,7 @@
     >
       <v-fab-transition>
         <v-btn
-          to="/kependudukan/kartu-keluarga/index"
+          to="/kependudukan/kartu-keluarga/Index"
           color="secondary"
           dark
           absolute
@@ -56,7 +56,10 @@
               persistent-hint
               single-line
             />
+<<<<<<< HEAD
+=======
 
+>>>>>>> 67a2344f582141e959a7528e2e3b87a4ddbdf609
             <v-select
               v-if="province_id>0"
               v-model="form.city_id"
@@ -133,7 +136,6 @@
 
 <script>
   export default {
-
     data () {
       return {
         alert: false,
@@ -156,14 +158,12 @@
     // created () {
     //   this.city_id = this.user.city_id
     //   this.province_id = this.user.province_id
-
     //   if (this.provinces && this.provinces.length === 0) {
     //     this.axios.get('/provinces')
     //       .then((response) => {
     //         const { data } = response.data
     //         this.setProvinces(data)
     //       })
-
     //     this.axios.get('/cities')
     //       .then((response) => {
     //         const { data } = response.data

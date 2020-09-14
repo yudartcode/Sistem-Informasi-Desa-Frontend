@@ -1,12 +1,12 @@
 <template>
   <v-container
-    id="kk"
+    id="umum"
     fluid
     tag="section"
   >
     <base-material-card
       icon="mdi-clipboard-text"
-      title="Kartu Keluarga"
+      title="Umum"
       class="px-5 py-3"
     >
       <v-card-title>
@@ -31,11 +31,16 @@
       return {
         search: '',
         headers: [
-          { text: 'No KK', value: 'id' },
-          { text: 'Kepala Keluarga', value: 'kepala_keluarga' },
-          { text: 'Alamat', value: 'alamat' },
-          { text: 'RT', value: 'rt' },
-          { text: 'RW', value: 'rw' },
+          { text: 'Luas Desa', value: 'id' },
+          { text: 'Jumlah Dusun', value: 'jumlah_dusun' },
+          { text: 'Batas Wilayah Barat', value: 'bw_barat' },
+          { text: 'Batas Wilayah Utara', value: 'bw_utara' },
+          { text: 'Batas Wilayah Selatan', value: 'bw_selatan' },
+          { text: 'Batas Wilayah Timur', value: 'bw_timur' },
+          { text: 'Jarak Dari Pusat Kecamatan', value: 'jdp_kecamatan' },
+          { text: 'Jarak Dari Pusat Kabupaten', value: 'jdp_kabupaten' },
+          { text: 'Jarak Dari Pusat Provinsi', value: 'jdp_provinsi' },
+          { text: 'Status Desa', value: 'status_desa' },
         ],
         data_kk: [],
         page: 0,
@@ -47,7 +52,7 @@
     },
     methods: {
       go () {
-        const url = '/kartu-keluarga?page=' + this.page
+        const url = '/umum?page=' + this.page
         this.axios.get(url)
           .then((response) => {
             const { data } = response.data

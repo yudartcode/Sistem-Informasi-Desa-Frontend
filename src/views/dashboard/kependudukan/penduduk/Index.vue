@@ -1,6 +1,6 @@
 <template>
   <v-container
-    id="list"
+    id="pendudukk"
     fluid
     tag="section"
   >
@@ -28,7 +28,6 @@
 <script>
   export default {
     name: 'ListPenduduk',
-
     data () {
       return {
         search: '',

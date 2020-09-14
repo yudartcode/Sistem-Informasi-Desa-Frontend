@@ -1,12 +1,12 @@
 <template>
   <v-container
-    id="kk"
+    id="administrasi"
     fluid
     tag="section"
   >
     <base-material-card
       icon="mdi-clipboard-text"
-      title="Kartu Keluarga"
+      title="Administrasi"
       class="px-5 py-3"
     >
       <v-card-title>
@@ -31,11 +31,10 @@
       return {
         search: '',
         headers: [
-          { text: 'No KK', value: 'id' },
-          { text: 'Kepala Keluarga', value: 'kepala_keluarga' },
-          { text: 'Alamat', value: 'alamat' },
-          { text: 'RT', value: 'rt' },
-          { text: 'RW', value: 'rw' },
+          { text: 'Alamat Kantor', value: 'id' },
+          { text: 'Telephone Kantor', value: 'telephone_kantor' },
+          { text: 'Email Desa', value: 'email' },
+          { text: 'Web Desa', value: 'web' },
         ],
         data_kk: [],
         page: 0,
@@ -47,7 +46,7 @@
     },
     methods: {
       go () {
-        const url = '/kartu-keluarga?page=' + this.page
+        const url = '/administrasi?page=' + this.page
         this.axios.get(url)
           .then((response) => {
             const { data } = response.data

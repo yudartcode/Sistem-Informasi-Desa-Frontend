@@ -1,27 +1,19 @@
 <template>
   <v-container
-    id="administrasi"
+    id="pendudukc"
     fluid
     tag="section"
   >
     <base-material-card
       icon="mdi-file"
       class="px-5 py-3"
-      title="Administrasi"
+      title="Input Penduduk"
     >
-      <v-col sm="4">
-        <v-text-field
-          label="Alamat Kantor"
-        />
-        <v-text-field
-          label="Telp Kantor"
-        />
-        <v-text-field
-          label="Email Desa"
-        />
-        <v-text-field
-          label="Web Desa"
-        />
+      <v-col sm="2">
+        <v-text-field label="Jumlah Laki-Laki" />
+        <v-text-field label="Jumlah Peremepuan" />
+        <v-text-field label="Jumlah KK" />
+        <v-text-field label="Jumlah RTM" />
       </v-col>
       <v-btn
         class="mr-4"
@@ -44,8 +36,7 @@
   export default {
     name: 'DashboardPenduduk',
 
-    data: () => ({
-    }),
+    data: () => ({}),
     submit () {
       this.$v.$touch()
     },
