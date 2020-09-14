@@ -56,10 +56,6 @@
               persistent-hint
               single-line
             />
-<<<<<<< HEAD
-=======
-
->>>>>>> 67a2344f582141e959a7528e2e3b87a4ddbdf609
             <v-select
               v-if="province_id>0"
               v-model="form.city_id"
