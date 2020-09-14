@@ -9,12 +9,12 @@
       title="Sarana Penunjang"
       class="px-5 py-3"
     >
-          <v-select
-      v-model="select"
-      :items="items"
-      label="Pilih Sarana"
-      solo
-    ></v-select>
+      <v-select
+        v-model="select"
+        :items="items"
+        label="Pilih Sarana"
+        solo
+      />
       <v-simple-table>
         <thead>
           <tr>

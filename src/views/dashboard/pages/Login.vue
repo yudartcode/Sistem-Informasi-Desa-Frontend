@@ -1,31 +1,32 @@
 <template>
-  <v-container
-    id="kk"
-    fluid
-    tag="section"
-  >
-
+  <v-app id="login">
+    <v-main>
+      <v-container
+        class="fill-height"
+        fluid
+      >
         <v-row
-        justify="center"
+          align="center"
+          justify="center"
         >
-        <v-col
+          <v-col
             cols="12"
             sm="8"
             md="4"
           >
-        <base-material-card
-      icon="mdi-account"
-      class="px-5 py-3"
-      title="Login"
-    >
-                <v-card-text>
+            <base-material-card
+              icon="mdi-account"
+              class="px-5 py-3"
+              title="Login"
+            >
+              <v-card-text>
                 <v-form>
                   <v-text-field
                     label="Login"
                     name="login"
                     prepend-icon="mdi-account"
                     type="text"
-                  ></v-text-field>
+                  />
 
                   <v-text-field
                     id="password"
@@ -33,24 +34,25 @@
                     name="password"
                     prepend-icon="mdi-lock"
                     type="password"
-                  ></v-text-field>
+                  />
                 </v-form>
               </v-card-text>
-                  <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary">Login</v-btn>
+              <v-card-actions>
+                <v-spacer />
+                <v-btn color="primary">
+                  Login
+                </v-btn>
               </v-card-actions>
-    </base-material-card>
-        </v-col>
+            </base-material-card>
+          </v-col>
         </v-row>
-  </v-container>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-  export default {
-    name: 'DashboardPenduduk',
-
-    data: () => ({
-    }),
-  }
+  export default {}
 </script>
+
+<style>
