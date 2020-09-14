@@ -106,7 +106,7 @@
           children: [
             {
               title: 'penduduk',
-              to: 'penduduk/Penduduk',
+              to: 'penduduk/Index',
             },
             {
               icon: '',
@@ -116,17 +116,17 @@
             {
               icon: '',
               title: 'Perangkat Desa',
-              to: 'perangkatdesa/Perangkatdesa',
+              to: 'perangkatdesa/Index',
             },
             {
               icon: '',
               title: 'Administrasi',
-              to: 'administrasi/Administrasi',
+              to: 'administrasi/Index',
             },
             {
               icon: '',
               title: 'Umum',
-              to: 'umum/Umum',
+              to: 'umum/Index',
             },
             {
               icon: '',
@@ -147,22 +147,17 @@
             {
               icon: '',
               title: 'Kartu Keluarga',
-              to: 'KK/Kartukeluarga',
+              to: 'kartu-keluarga/index',
             },
             {
               icon: '',
-              title: 'Inpu tdata',
-              to: 'inputdata/Inputdata',
+              title: 'Penduduk',
+              to: 'penduduk/index',
             },
             {
               icon: '',
               title: 'Report',
               to: 'Report',
-            },
-            {
-              icon: '',
-              title: 'List Penduduk',
-              to: 'Listpenduduk',
             }],
         },
         {

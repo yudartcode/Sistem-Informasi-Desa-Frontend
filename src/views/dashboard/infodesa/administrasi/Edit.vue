@@ -1,6 +1,6 @@
 <template>
   <v-container
-    id="umum"
+    id="administrasie"
     fluid
     tag="section"
   >
@@ -8,38 +8,20 @@
         <base-material-card
       icon="mdi-file"
       class="px-5 py-3"
-      title="Input Data Umum"
+      title="Administrasi"
     >
-                <v-col sm="2">
+                <v-col sm="4">
                   <v-text-field
-                    label="Luas Desa"
+                    label="Alamat Kantor"
                   />
                   <v-text-field
-                    label="Jumlah Dusun"
+                    label="Telp Kantor"
                   />
                   <v-text-field
-                    label="Batas Wilayah Barat"
+                    label="Email Desa"
                   />
                   <v-text-field
-                    label="Batas Wilayah Utara"
-                  />
-                  <v-text-field
-                    label="Batas Wilayah Selatan"
-                  />
-                  <v-text-field
-                    label="Batas Wilayah Timur"
-                  />
-                  <v-text-field
-                    label="Jarak dari Pusat Kecamatan"
-                  />
-                  <v-text-field
-                    label="Jarak dari Pusat Kabupaten"
-                  />
-                  <v-text-field
-                    label="Jarak dari Pusat Provinsi"
-                  />
-                  <v-text-field
-                    label="Status Desa"
+                    label="Web Desa"
                   />
                 </v-col>
                   <v-btn

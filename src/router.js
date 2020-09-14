@@ -26,8 +26,18 @@ export default new Router({
         // Info Desa
         {
           name: 'Penduduk',
-          path: 'infodesa/penduduk/Penduduk',
-          component: () => import('@/views/dashboard/infodesa/penduduk/Penduduk'),
+          path: 'infodesa/penduduk/Index',
+          component: () => import('@/views/dashboard/infodesa/penduduk/Index'),
+        },
+        {
+          name: 'Penduduk',
+          path: 'infodesa/penduduk/Create',
+          component: () => import('@/views/dashboard/infodesa/penduduk/Create'),
+        },
+        {
+          name: 'Penduduk',
+          path: 'infodesa/penduduk/Edit',
+          component: () => import('@/views/dashboard/infodesa/penduduk/Edit'),
         },
         {
           name: 'Sarana Penunjang',
@@ -36,13 +46,33 @@ export default new Router({
         },
         {
           name: 'Perangkat Desa',
-          path: 'infodesa/perangkatdesa/Perangkatdesa',
-          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Perangkatdesa'),
+          path: 'infodesa/perangkatdesa/Index',
+          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Index'),
+        },
+        {
+          name: 'Perangkat Desa',
+          path: 'infodesa/perangkatdesa/Create',
+          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Create'),
+        },
+        {
+          name: 'Perangkat Desa',
+          path: 'infodesa/perangkatdesa/Edit',
+          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Edit'),
         },
         {
           name: 'Administrasi',
-          path: 'infodesa/administrasi/Administrasi',
-          component: () => import('@/views/dashboard/infodesa/administrasi/Administrasi'),
+          path: 'infodesa/administrasi/Index',
+          component: () => import('@/views/dashboard/infodesa/administrasi/Index'),
+        },
+        {
+          name: 'Administrasi',
+          path: 'infodesa/administrasi/Create',
+          component: () => import('@/views/dashboard/infodesa/administrasi/Create'),
+        },
+        {
+          name: 'Administrasi',
+          path: 'infodesa/administrasi/Edit',
+          component: () => import('@/views/dashboard/infodesa/administrasi/Edit'),
         },
         {
           name: 'Potensi',
@@ -51,28 +81,54 @@ export default new Router({
         },
         {
           name: 'Umum',
-          path: 'infodesa/umum/Umum',
-          component: () => import('@/views/dashboard/infodesa/umum/Umum'),
+          path: 'infodesa/umum/index',
+          component: () => import('@/views/dashboard/infodesa/umum/Index'),
+        },
+        {
+          name: 'Umum',
+          path: 'infodesa/umum/Create',
+          component: () => import('@/views/dashboard/infodesa/umum/Create'),
+        },
+        {
+          name: 'Umum',
+          path: 'infodesa/umum/Edit',
+          component: () => import('@/views/dashboard/infodesa/umum/Edit'),
         },
         {
           name: 'Produk Unggulan',
           path: 'infodesa/produkunggulan',
           component: () => import('@/views/dashboard/infodesa/Produkunggulan'),
         },
+        // kependudukan
         {
-          name: 'List Penduduk',
-          path: 'kependudukan/Listpenduduk',
-          component: () => import('@/views/dashboard/kependudukan/Listpenduduk'),
+          name: 'Index Kartu Keluarga',
+          path: 'kependudukan/kartu-keluarga/index',
+          component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Index'),
         },
         {
-          name: 'Kartu Keluarga',
-          path: 'kependudukan/KK/Kartukeluarga',
-          component: () => import('@/views/dashboard/kependudukan/KK/Kartukeluarga'),
+          name: 'Create Kartu Keluarga',
+          path: 'kependudukan/kartu-keluarga/create',
+          component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Create'),
         },
         {
-          name: 'Input Data',
-          path: 'kependudukan/inputdata/Inputdata',
-          component: () => import('@/views/dashboard/kependudukan/inputdata/Inputdata'),
+          name: 'Edit Kartu Keluarga',
+          path: 'kependudukan/kartu-keluarga/edit',
+          component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Edit'),
+        },
+        {
+          name: 'Index Penduduk',
+          path: 'kependudukan/penduduk/index',
+          component: () => import('@/views/dashboard/kependudukan/penduduk/Index'),
+        },
+        {
+          name: 'Create Penduduk',
+          path: 'kependudukan/penduduk/create',
+          component: () => import('@/views/dashboard/kependudukan/penduduk/Create'),
+        },
+        {
+          name: 'Edit Penduduk',
+          path: 'kependudukan/penduduk/edit',
+          component: () => import('@/views/dashboard/kependudukan/penduduk/Edit'),
         },
         {
           name: 'Report',

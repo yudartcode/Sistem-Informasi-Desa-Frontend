@@ -1,6 +1,6 @@
 <template>
   <v-container
-    id="penduduk"
+    id="administrasic"
     fluid
     tag="section"
   >
@@ -8,20 +8,20 @@
         <base-material-card
       icon="mdi-file"
       class="px-5 py-3"
-      title="Input Penduduk"
+      title="Administrasi"
     >
-                <v-col sm="2">
+                <v-col sm="4">
                   <v-text-field
-                    label="Jumlah Laki-Laki"
+                    label="Alamat Kantor"
                   />
                   <v-text-field
-                    label="Jumlah Peremepuan"
+                    label="Telp Kantor"
                   />
                   <v-text-field
-                    label="Jumlah KK"
+                    label="Email Desa"
                   />
                   <v-text-field
-                    label="Jumlah RTM"
+                    label="Web Desa"
                   />
                 </v-col>
                   <v-btn
