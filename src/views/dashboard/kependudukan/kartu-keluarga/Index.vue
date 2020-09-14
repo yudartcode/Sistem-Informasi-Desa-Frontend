@@ -5,10 +5,24 @@
     tag="section"
   >
     <base-material-card
-      icon="mdi-clipboard-text"
+      icon="mdi-file"
       title="Kartu Keluarga"
       class="px-5 py-3"
     >
+      <v-fab-transition>
+        <v-btn
+          to="/kependudukan/kartu-keluarga/create"
+          color="primary"
+          dark
+          absolute
+          top
+          right
+          fab
+        >
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </v-fab-transition>
+
       <v-card-title>
         <v-text-field
           v-model="search"
@@ -21,7 +35,23 @@
         :headers="headers"
         :items="data_kk"
         :search="search"
-      />
+      >
+        <template v-slot:item.actions="{ item }">
+          <v-icon
+            class="mr-2"
+            color="orange"
+            @click="edit(item)"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            color="red"
+            @click="del(item)"
+          >
+            mdi-delete
+          </v-icon>
+        </template>
+      </v-data-table>
     </base-material-card>
   </v-container>
 </template>
@@ -36,6 +66,7 @@
           { text: 'Alamat', value: 'alamat' },
           { text: 'RT', value: 'rt' },
           { text: 'RW', value: 'rw' },
+          { text: 'Action', value: 'actions', sortable: false },
         ],
         data_kk: [],
         page: 0,
@@ -59,6 +90,14 @@
           .catch((error) => {
             console.log(error.response)
           })
+      },
+
+      editItem (item) {
+
+      },
+
+      deleteItem (item) {
+
       },
     },
   }
