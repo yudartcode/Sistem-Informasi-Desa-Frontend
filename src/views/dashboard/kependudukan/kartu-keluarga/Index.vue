@@ -9,6 +9,19 @@
       title="Kartu Keluarga"
       class="px-5 py-3"
     >
+      <v-fab-transition>
+        <v-btn
+          to="/kependudukan/kartu-keluarga/Index"
+          color="primary"
+          dark
+          absolute
+          top
+          right
+          fab
+        >
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </v-fab-transition>
       <v-card-title>
         <v-text-field
           v-model="search"
