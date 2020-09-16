@@ -47,6 +47,7 @@
               label="Kepala Keluarga"
               required
             />
+            //provinsi dan kabupaten kota
             <!-- <v-select
               v-model="form.province_id"
               :items="provinces"
