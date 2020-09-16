@@ -11,7 +11,7 @@
     >
       <v-fab-transition>
         <v-btn
-          to="/kependudukan/kartu-keluarga/Index"
+          to="/kependudukan/kartu-keluarga/Create"
           color="primary"
           dark
           absolute
