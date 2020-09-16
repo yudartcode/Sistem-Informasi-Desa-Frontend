@@ -1,6 +1,5 @@
 <template>
   <v-container
-    id="kk"
     fluid
     tag="section"
   >
@@ -34,7 +33,23 @@
         :headers="headers"
         :items="data_kk"
         :search="search"
-      />
+      >
+        <template v-slot:item.action="{ item }">
+          <v-icon
+            color="orange"
+            class="mr-2"
+            @click="editItem(item)"
+          >
+            mdi-pencil
+          </v-icon>
+          <v-icon
+            color="red"
+            @click="deleteItem(item)"
+          >
+            mdi-delete
+          </v-icon>
+        </template>
+      </v-data-table>
     </base-material-card>
   </v-container>
 </template>
@@ -49,6 +64,7 @@
           { text: 'Alamat', value: 'alamat' },
           { text: 'RT', value: 'rt' },
           { text: 'RW', value: 'rw' },
+          { text: 'Action', value: 'action', sortable: false },
         ],
         data_kk: [],
         page: 0,
