@@ -32,19 +32,26 @@
       <v-data-table
         :headers="headers"
         :items="data_kk"
+        :loading="true"
         :search="search"
       >
-        <template v-slot:item.action="{ item }">
+        <v-progress-linear
+          v-show="progressBar"
+          slot="progress"
+          color="blue"
+          indeterminate
+        />
+        <template v-slot:[`item.action`]="{ item }">
           <v-icon
             color="orange"
             class="mr-2"
-            @click="editItem(item)"
+            @click="edit(item)"
           >
             mdi-pencil
           </v-icon>
           <v-icon
             color="red"
-            @click="deleteItem(item)"
+            @click="del(item)"
           >
             mdi-delete
           </v-icon>
@@ -71,22 +78,34 @@
         lengthPage: 0,
       }
     },
+    watch: {
+      data_kk () {
+        this.progressBar = false
+      },
+    },
     created () {
-      this.go()
+      this.progressBar = true
+      this.load()
     },
     methods: {
-      go () {
-        const url = '/kartu-keluarga?page=' + this.page
+      load () {
+        const url = '/kartu-keluarga'
         this.axios.get(url)
           .then((response) => {
             const { data } = response.data
-            const { meta } = data
             this.data_kk = data
-            this.lengthPage = meta.last_page
-            this.page = meta.current_page
           })
           .catch((error) => {
             console.log(error.response)
+          })
+      },
+      edit (item) {
+        return item
+      },
+      del (item) {
+        confirm('Are you sure you want to delete this item?') &&
+          this.axios.delete('/kartu-keluarga/' + this.item.id).then(res => {
+            this.load()
           })
       },
     },
