@@ -231,7 +231,7 @@
 
 <script>
   export default {
-    name: 'DashboardDashboard',
+    name: 'Dashboard',
 
     data () {
       return {
