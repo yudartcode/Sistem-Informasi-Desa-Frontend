@@ -3,6 +3,15 @@
     fluid
     tag="section"
   >
+    <v-alert
+      v-model="deleted"
+      dense
+      text
+      outlined
+      type="success"
+    >
+      Data <strong>Kartu Keluarga</strong> Berhasil Dihapus!
+    </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
       title="Kartu Keluarga"
@@ -100,11 +109,13 @@
           })
       },
       edit (item) {
+        console.log(item.id)
         return item
       },
       del (item) {
         confirm('Are you sure you want to delete this item?') &&
-          this.axios.delete('/kartu-keluarga/' + this.item.id).then(res => {
+          this.axios.delete('/kartu-keluarga/' + item.id).then(res => {
+            this.deleted = true
             this.load()
           })
       },
