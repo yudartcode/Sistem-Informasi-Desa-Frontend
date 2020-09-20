@@ -9,12 +9,12 @@
       text
       type="success"
     >
-      Penambahan <strong>Kartu Keluarga</strong> Berhasil !
+      Update <strong>Kartu Keluarga</strong> Berhasil !
     </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
       class="px-5 py-3"
-      title="Input Kartu Keluarga"
+      title="Update Kartu Keluarga"
     >
       <v-fab-transition>
         <v-btn
@@ -108,10 +108,10 @@
             <v-btn
               v-show="!updateSubmit"
               class="mr-4"
-              color="primary"
+              color="blue"
               type="submit"
             >
-              Simpan
+              Update
             </v-btn>
             <v-btn
               v-show="updateSubmit"
@@ -146,6 +146,7 @@
           rw: '',
           kode_post: '',
         },
+        data: [],
         kartuKeluarga: '',
         updateSubmit: false,
       }
@@ -166,13 +167,9 @@
     //       })
     //   }
     // },
-    methods: {
-      add () {
-        this.axios.post('/kartu-keluarga', this.form).then(res => {
-          this.form = ''
-          this.alert = true
-        })
-      },
+    created () {
+      this.data = this.$route.params.item
+      console.log(this.data)
     },
   }
 </script>

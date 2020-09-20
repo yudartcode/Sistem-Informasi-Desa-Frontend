@@ -47,34 +47,14 @@
               label="Kepala Keluarga"
               required
             />
-            //provinsi dan kabupaten kota
-            <!-- <v-select
-              v-model="form.province_id"
-              :items="provinces"
-              item-text="province"
-              item-value="id"
-              label="Province"
-              persistent-hint
-              single-line
-            />
-            <v-select
-              v-if="province_id>0"
-              v-model="form.city_id"
-              :items="citiesByProvince"
-              item-text="city_name"
-              item-value="id"
-              label="City"
-              persistent-hint
-              single-line
-            /> -->
             <v-text-field
               v-model="form.provinsi"
-              label="provinsi"
+              label="Provinsi"
               required
             />
             <v-text-field
               v-model="form.kabupaten"
-              label="kabupaten"
+              label="Kabupaten"
               required
             />
             <v-text-field
@@ -86,7 +66,7 @@
           <v-col md="6">
             <v-text-field
               v-model="form.kelurahan"
-              label="kelurahan"
+              label="Kelurahan"
               required
             />
             <v-text-field
@@ -152,27 +132,16 @@
         updateSubmit: false,
       }
     },
-    // created () {
-    //   this.city_id = this.user.city_id
-    //   this.province_id = this.user.province_id
-    //   if (this.provinces && this.provinces.length === 0) {
-    //     this.axios.get('/provinces')
-    //       .then((response) => {
-    //         const { data } = response.data
-    //         this.setProvinces(data)
-    //       })
-    //     this.axios.get('/cities')
-    //       .then((response) => {
-    //         const { data } = response.data
-    //         this.setCities(data)
-    //       })
-    //   }
-    // },
     methods: {
       add () {
         this.axios.post('/kartu-keluarga', this.form).then(res => {
           this.form = ''
           this.alert = true
+        })
+      },
+      load (data) {
+        this.axios.get('/kartu-keluarga/1', data).then(res => {
+          console.log(data)
         })
       },
     },

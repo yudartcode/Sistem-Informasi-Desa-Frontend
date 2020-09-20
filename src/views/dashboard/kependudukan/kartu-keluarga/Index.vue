@@ -70,9 +70,11 @@
   </v-container>
 </template>
 <script>
+
   export default {
     data () {
       return {
+        deleted: false,
         search: '',
         headers: [
           { text: 'No KK', value: 'id' },
@@ -83,8 +85,6 @@
           { text: 'Action', value: 'action', sortable: false },
         ],
         data_kk: [],
-        page: 0,
-        lengthPage: 0,
       }
     },
     watch: {
@@ -109,11 +109,12 @@
           })
       },
       edit (item) {
-        console.log(item.id)
-        return item
+        this.$router.push({
+          name: 'Edit Kartu Keluarga', params: item,
+        })
       },
       del (item) {
-        confirm('Are you sure you want to delete this item?') &&
+        confirm('Yakin ingin menghapus Kartu Keluarga dari ' + item.kepala_keluarga + '?') &&
           this.axios.delete('/kartu-keluarga/' + item.id).then(res => {
             this.deleted = true
             this.load()
