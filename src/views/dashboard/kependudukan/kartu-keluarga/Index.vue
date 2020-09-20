@@ -110,7 +110,7 @@
       },
       edit (item) {
         this.$router.push({
-          name: 'Edit Kartu Keluarga', params: item,
+          name: 'Edit Kartu Keluarga', params: { data: item },
         })
       },
       del (item) {

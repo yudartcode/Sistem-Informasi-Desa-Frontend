@@ -32,39 +32,20 @@
       <v-form
         ref="form"
         lazy-validation
-        @submit.prevent="add"
+        @submit.prevent="update"
       >
         <v-row>
           <v-col md="6">
             <v-text-field
               v-model="form.id"
               label="No. Kartu Keluarga"
-              required
+              disabled
             />
             <v-text-field
               v-model="form.kepala_keluarga"
               label="Kepala Keluarga"
               required
             />
-            <!-- <v-select
-              v-model="form.province_id"
-              :items="provinces"
-              item-text="province"
-              item-value="id"
-              label="Province"
-              persistent-hint
-              single-line
-            />
-            <v-select
-              v-if="province_id>0"
-              v-model="form.city_id"
-              :items="citiesByProvince"
-              item-text="city_name"
-              item-value="id"
-              label="City"
-              persistent-hint
-              single-line
-            /> -->
             <v-text-field
               v-model="form.provinsi"
               label="provinsi"
@@ -113,15 +94,6 @@
             >
               Update
             </v-btn>
-            <v-btn
-              v-show="updateSubmit"
-              class="mr-4"
-              color="blue"
-              type="button"
-              @click="update(form)"
-            >
-              Update
-            </v-btn>
           </v-col>
         </v-row>
       </v-form>
@@ -146,30 +118,20 @@
           rw: '',
           kode_post: '',
         },
-        data: [],
         kartuKeluarga: '',
         updateSubmit: false,
       }
     },
-    // created () {
-    //   this.city_id = this.user.city_id
-    //   this.province_id = this.user.province_id
-    //   if (this.provinces && this.provinces.length === 0) {
-    //     this.axios.get('/provinces')
-    //       .then((response) => {
-    //         const { data } = response.data
-    //         this.setProvinces(data)
-    //       })
-    //     this.axios.get('/cities')
-    //       .then((response) => {
-    //         const { data } = response.data
-    //         this.setCities(data)
-    //       })
-    //   }
-    // },
     created () {
-      this.data = this.$route.params.item
-      console.log(this.data)
+      this.form = this.$route.params.data
+    },
+    methods: {
+      update () {
+        this.axios.put('/kartu-keluarga/' + this.form.id, this.form).then(res => {
+          this.form = ''
+          this.alert = true
+        })
+      },
     },
   }
 </script>

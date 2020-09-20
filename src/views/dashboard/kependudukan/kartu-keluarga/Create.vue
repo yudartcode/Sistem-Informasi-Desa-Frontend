@@ -95,15 +95,6 @@
             >
               Simpan
             </v-btn>
-            <v-btn
-              v-show="updateSubmit"
-              class="mr-4"
-              color="blue"
-              type="button"
-              @click="update(form)"
-            >
-              Update
-            </v-btn>
           </v-col>
         </v-row>
       </v-form>
