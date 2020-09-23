@@ -3,15 +3,6 @@
     fluid
     tag="section"
   >
-    <v-alert
-      v-model="deleted"
-      dense
-      text
-      outlined
-      type="success"
-    >
-      Data <strong>Kartu Keluarga</strong> Berhasil Dihapus!
-    </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
       title="Kartu Keluarga"
@@ -70,6 +61,7 @@
   </v-container>
 </template>
 <script>
+  import { mapActions } from 'vuex'
 
   export default {
     data () {
@@ -97,6 +89,9 @@
       this.load()
     },
     methods: {
+      ...mapActions({
+        setAlert: 'alert/set',
+      }),
       load () {
         const url = '/kartu-keluarga'
         this.axios.get(url)
@@ -116,7 +111,11 @@
       del (item) {
         confirm('Yakin ingin menghapus Kartu Keluarga dari ' + item.kepala_keluarga + '?') &&
           this.axios.delete('/kartu-keluarga/' + item.id).then(res => {
-            this.deleted = true
+            this.setAlert({
+              status: true,
+              text: 'Data Kartu Keluarga berhasil dihapus!',
+              type: 'success',
+            })
             this.load()
           })
       },

@@ -3,15 +3,6 @@
     fluid
     tag="section"
   >
-    <v-alert
-      v-model="alert"
-      dense
-      text
-      outlined
-      type="success"
-    >
-      Data <strong>Kartu Keluarga</strong> Berhasil Ditambahkan!
-    </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
       class="px-5 py-3"
@@ -103,10 +94,11 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     data () {
       return {
-        alert: false,
         form: {
           id: '',
           kepala_keluarga: '',
@@ -124,15 +116,17 @@
       }
     },
     methods: {
+      ...mapActions({
+        setAlert: 'alert/set',
+      }),
       add () {
         this.axios.post('/kartu-keluarga', this.form).then(res => {
           this.form = ''
-          this.alert = true
-        })
-      },
-      load (data) {
-        this.axios.get('/kartu-keluarga/1', data).then(res => {
-          console.log(data)
+          this.setAlert({
+            status: true,
+            color: 'success',
+            text: 'Data Kartu Keluarga Berhasil Ditambahkan!',
+          })
         })
       },
     },

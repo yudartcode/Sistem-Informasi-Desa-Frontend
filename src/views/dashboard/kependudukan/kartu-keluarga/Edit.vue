@@ -3,14 +3,6 @@
     fluid
     tag="section"
   >
-    <v-alert
-      v-model="alert"
-      dense
-      text
-      type="success"
-    >
-      Update <strong>Kartu Keluarga</strong> Berhasil !
-    </v-alert>
     <base-material-card
       icon="mdi-clipboard-text"
       class="px-5 py-3"
@@ -102,10 +94,11 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     data () {
       return {
-        alert: false,
         form: {
           id: '',
           kepala_keluarga: '',
@@ -126,10 +119,17 @@
       this.form = this.$route.params.data
     },
     methods: {
+      ...mapActions({
+        setAlert: 'alert/set',
+      }),
       update () {
         this.axios.put('/kartu-keluarga/' + this.form.id, this.form).then(res => {
           this.form = ''
-          this.alert = true
+          this.setAlert({
+            status: true,
+            color: 'success',
+            text: 'Data Kartu Keluarga Berhasil Diupdate!',
+          })
         })
       },
     },
