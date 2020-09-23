@@ -10,7 +10,7 @@
     >
       <v-fab-transition>
         <v-btn
-          to="/kependudukan/kartu-keluarga/Create"
+          to="/kependudukan/kartu-keluarga/Form"
           color="primary"
           dark
           absolute
@@ -105,7 +105,7 @@
       },
       edit (item) {
         this.$router.push({
-          name: 'Edit Kartu Keluarga', params: { data: item },
+          name: 'Form Kartu Keluarga', params: { data: item, update: true },
         })
       },
       del (item) {
@@ -114,7 +114,7 @@
             this.setAlert({
               status: true,
               text: 'Data Kartu Keluarga berhasil dihapus!',
-              type: 'success',
+              color: 'success',
             })
             this.load()
           })

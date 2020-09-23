@@ -6,11 +6,11 @@
     <base-material-card
       icon="mdi-clipboard-text"
       class="px-5 py-3"
-      title="Update Kartu Keluarga"
+      title="Form Kartu Keluarga"
     >
       <v-fab-transition>
         <v-btn
-          to="/kependudukan/kartu-keluarga/index"
+          to="/kependudukan/kartu-keluarga/Index"
           color="secondary"
           dark
           absolute
@@ -24,28 +24,38 @@
       <v-form
         ref="form"
         lazy-validation
-        @submit.prevent="update"
+        @submit.prevent="add"
       >
         <v-row>
           <v-col md="6">
             <v-text-field
+              v-if="updateSubmit"
               v-model="form.id"
               label="No. Kartu Keluarga"
               disabled
+              type="number"
             />
             <v-text-field
+              v-if="!updateSubmit"
+              v-model="form.id"
+              label="No. Kartu Keluarga"
+              required
+              type="number"
+            />
+            <v-text-field
+              id="dkk"
               v-model="form.kepala_keluarga"
               label="Kepala Keluarga"
               required
             />
             <v-text-field
               v-model="form.provinsi"
-              label="provinsi"
+              label="Provinsi"
               required
             />
             <v-text-field
               v-model="form.kabupaten"
-              label="kabupaten"
+              label="Kabupaten"
               required
             />
             <v-text-field
@@ -57,20 +67,23 @@
           <v-col md="6">
             <v-text-field
               v-model="form.kelurahan"
-              label="kelurahan"
+              label="Kelurahan"
               required
             />
             <v-text-field
               v-model="form.kode_pos"
               label="Kode Pos"
+              type="number"
             />
             <v-text-field
               v-model="form.rt"
               label="RT"
               required
+              type="number"
             />
             <v-text-field
               v-model="form.rw"
+              type="number"
               label="RW"
             />
             <v-text-field
@@ -81,8 +94,16 @@
             <v-btn
               v-show="!updateSubmit"
               class="mr-4"
-              color="blue"
+              color="primary"
               type="submit"
+            >
+              Simpan
+            </v-btn>
+            <v-btn
+              v-show="updateSubmit"
+              type="button"
+              color="blue"
+              @click="update()"
             >
               Update
             </v-btn>
@@ -116,12 +137,27 @@
       }
     },
     created () {
-      this.form = this.$route.params.data
+      this.updateSubmit = this.$route.params.update
+      if (this.updateSubmit === true) {
+        this.form = this.$route.params.data
+      } else {
+        this.updateSubmit = false
+      }
     },
     methods: {
       ...mapActions({
         setAlert: 'alert/set',
       }),
+      add () {
+        this.axios.post('/kartu-keluarga', this.form).then(res => {
+          this.form = ''
+          this.setAlert({
+            status: true,
+            color: 'success',
+            text: 'Data Kartu Keluarga Berhasil Ditambahkan!',
+          })
+        })
+      },
       update () {
         this.axios.put('/kartu-keluarga/' + this.form.id, this.form).then(res => {
           this.form = ''
