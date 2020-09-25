@@ -1,0 +1,120 @@
+<template>
+  <v-container
+    fluid
+    tag="section"
+  >
+    <base-material-card
+      icon="mdi-clipboard-text"
+      class="px-5 py-3"
+      title="Form Perangkat Desa"
+    >
+      <v-fab-transition>
+        <v-btn
+          to="/infodesa/perangkatdesa/Index"
+          color="secondary"
+          dark
+          absolute
+          top
+          right
+          fab
+        >
+          <v-icon>mdi-arrow-left</v-icon>
+        </v-btn>
+      </v-fab-transition>
+      <v-form
+        ref="form"
+        lazy-validation
+        @submit.prevent="add"
+      >
+        <v-row>
+          <v-col md="6">
+            <v-text-field
+              v-model="form.nama"
+              label="Nama Kades"
+              required
+            />
+            <v-text-field
+              v-model="form.masajab"
+              label="Masa Jabatan"
+              required
+            />
+            <v-text-field
+              v-model="form.telp"
+              label="Telephone"
+              required
+            />
+          </v-col>
+          <v-col md="6">
+            <v-btn
+              v-show="!updateSubmit"
+              class="mr-4"
+              color="primary"
+              type="submit"
+            >
+              Simpan
+            </v-btn>
+            <v-btn
+              v-show="updateSubmit"
+              type="button"
+              color="blue"
+              @click="update()"
+            >
+              Update
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </base-material-card>
+  </v-container>
+</template>
+
+<script>
+  import { mapActions } from 'vuex'
+
+  export default {
+    data () {
+      return {
+        form: {
+          nama: '',
+          masajab: '',
+          telp: '',
+        },
+        perangkatdesa: '',
+        updateSubmit: false,
+      }
+    },
+    created () {
+      this.updateSubmit = this.$route.params.update
+      if (this.updateSubmit === true) {
+        this.form = this.$route.params.data
+      } else {
+        this.updateSubmit = false
+      }
+    },
+    methods: {
+      ...mapActions({
+        setAlert: 'alert/set',
+      }),
+      add () {
+        this.axios.post('/perangkatdesa', this.form).then(res => {
+          this.form = ''
+          this.setAlert({
+            status: true,
+            color: 'success',
+            text: 'Perangkat Desa Berhasil Ditambahkan!',
+          })
+        })
+      },
+      update () {
+        this.axios.put('/perangkatdesa/' + this.form.id, this.form).then(res => {
+          this.form = ''
+          this.setAlert({
+            status: true,
+            color: 'success',
+            text: 'Perangkat Desa Berhasil Diupdate!',
+          })
+        })
+      },
+    },
+  }
+</script>

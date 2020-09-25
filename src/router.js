@@ -29,14 +29,9 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/penduduk/Index'),
         },
         {
-          name: 'Create Penduduk',
-          path: 'infodesa/penduduk/Create',
-          component: () => import('@/views/dashboard/infodesa/penduduk/Create'),
-        },
-        {
-          name: 'Edit Penduduk',
-          path: 'infodesa/penduduk/Edit',
-          component: () => import('@/views/dashboard/infodesa/penduduk/Edit'),
+          name: 'Form Penduduk',
+          path: 'infodesa/penduduk/Form',
+          component: () => import('@/views/dashboard/infodesa/penduduk/Form'),
         },
         {
           name: 'Sarana Penunjang',
@@ -49,14 +44,9 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/perangkatdesa/Index'),
         },
         {
-          name: 'Create Perangkat Desa',
-          path: 'infodesa/perangkatdesa/Create',
-          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Create'),
-        },
-        {
-          name: 'Edit Perangkat Desa',
-          path: 'infodesa/perangkatdesa/Edit',
-          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Edit'),
+          name: 'Form Perangkat Desa',
+          path: 'infodesa/perangkatdesa/Form',
+          component: () => import('@/views/dashboard/infodesa/perangkatdesa/Form'),
         },
         {
           name: 'Index Administrasi',
@@ -64,14 +54,9 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/administrasi/Index'),
         },
         {
-          name: 'Create Administrasi',
-          path: 'infodesa/administrasi/Create',
-          component: () => import('@/views/dashboard/infodesa/administrasi/Create'),
-        },
-        {
-          name: 'Edit Administrasi',
-          path: 'infodesa/administrasi/Edit',
-          component: () => import('@/views/dashboard/infodesa/administrasi/Edit'),
+          name: 'Form Administrasi',
+          path: 'infodesa/administrasi/Form',
+          component: () => import('@/views/dashboard/infodesa/administrasi/Form'),
         },
         {
           name: 'Potensi',
@@ -84,14 +69,9 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/umum/Index'),
         },
         {
-          name: 'Create Umum',
-          path: 'infodesa/umum/Create',
-          component: () => import('@/views/dashboard/infodesa/umum/Create'),
-        },
-        {
-          name: 'Edit Umum',
-          path: 'infodesa/umum/Edit',
-          component: () => import('@/views/dashboard/infodesa/umum/Edit'),
+          name: 'Form Umum',
+          path: 'infodesa/umum/Form',
+          component: () => import('@/views/dashboard/infodesa/umum/Form'),
         },
         {
           name: 'Produk Unggulan',
