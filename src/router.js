@@ -24,14 +24,9 @@ export default new Router({
         },
         // Info Desa
         {
-          name: 'Index Penduduk',
+          name: 'Index Info Penduduk',
           path: 'infodesa/penduduk/Index',
           component: () => import('@/views/dashboard/infodesa/penduduk/Index'),
-        },
-        {
-          name: 'Form Penduduk',
-          path: 'infodesa/penduduk/Form',
-          component: () => import('@/views/dashboard/infodesa/penduduk/Form'),
         },
         {
           name: 'Sarana Penunjang',
@@ -88,6 +83,16 @@ export default new Router({
           name: 'Form Kartu Keluarga',
           path: 'kependudukan/kartu-keluarga/form',
           component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Form'),
+        },
+        {
+          name: 'Index Penduduk',
+          path: 'kependudukan/penduduk/index',
+          component: () => import('@/views/dashboard/kependudukan/penduduk/Index'),
+        },
+        {
+          name: 'Form Penduduk',
+          path: 'kependudukan/penduduk/form',
+          component: () => import('@/views/dashboard/kependudukan/penduduk/Form'),
         },
         {
           name: 'Report',

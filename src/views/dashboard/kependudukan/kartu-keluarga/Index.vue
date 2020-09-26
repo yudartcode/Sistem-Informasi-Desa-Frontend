@@ -21,6 +21,30 @@
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-fab-transition>
+      <div class="text-right">
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-export
+          </v-icon>
+          Export
+        </v-btn>
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-import
+          </v-icon>
+          Import
+        </v-btn>
+      </div>
       <v-card-title>
         <v-text-field
           v-model="search"
