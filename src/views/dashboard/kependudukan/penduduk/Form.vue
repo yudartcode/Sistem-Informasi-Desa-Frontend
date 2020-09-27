@@ -14,6 +14,9 @@
           label="NIK"
         />
         <v-text-field
+          label="NIK"
+        />
+        <v-text-field
           label="Nama"
         />
         <v-col
