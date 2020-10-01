@@ -29,23 +29,23 @@
         <v-row>
           <v-col md="6">
             <v-text-field
-              v-model="form.jl"
-              label="Jumlah Laki-Laki"
+              v-model="form.total_pria"
+              label="Total Laki-Laki"
               required
             />
             <v-text-field
-              v-model="form.jp"
-              label="Jumlah Perempuan"
+              v-model="form.total_wanita"
+              label="Total Perempuan"
               required
             />
             <v-text-field
-              v-model="form.jkk"
-              label="Jumlah KK"
+              v-model="form.total_kk"
+              label="Total KK"
               required
             />
             <v-text-field
-              v-model="jrtm"
-              label="Jumlah RTM"
+              v-model="form.total_rtm"
+              label="Total RTM"
               required
             />
           </v-col>
@@ -80,10 +80,10 @@
     data () {
       return {
         form: {
-          jl: '',
-          jp: '',
-          jkk: '',
-          jrtm: '',
+          total_pria: '',
+          total_wanita: '',
+          total_kk: '',
+          total_rtm: '',
         },
         penduduk: '',
         updateSubmit: false,
@@ -102,7 +102,7 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/penduduk', this.form).then(res => {
+        this.axios.post('/inf-penduduk', this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
@@ -112,7 +112,7 @@
         })
       },
       update () {
-        this.axios.put('/penduduk/' + this.form.id, this.form).then(res => {
+        this.axios.put('/inf-penduduk/' + this.form.id, this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
