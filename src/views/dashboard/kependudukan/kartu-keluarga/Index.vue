@@ -75,9 +75,16 @@
           </v-icon>
           <v-icon
             color="red"
+            class="mr-2"
             @click="del(item)"
           >
             mdi-delete
+          </v-icon>
+          <v-icon
+            color="primary"
+            @click="toDetail(item)"
+          >
+            mdi-account-details
           </v-icon>
         </template>
       </v-data-table>
@@ -142,6 +149,11 @@
             })
             this.load()
           })
+      },
+      toDetail (item) {
+        this.$router.push({
+          name: 'Detail Kartu Keluarga', params: { data: item.id },
+        })
       },
     },
   }

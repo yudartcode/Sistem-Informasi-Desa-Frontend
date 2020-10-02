@@ -85,6 +85,11 @@ export default new Router({
           component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Form'),
         },
         {
+          name: 'Detail Kartu Keluarga',
+          path: 'kependudukan/kartu-keluarga/detail',
+          component: () => import('@/views/dashboard/kependudukan/kartu-keluarga/Detail'),
+        },
+        {
           name: 'Index Penduduk',
           path: 'kependudukan/penduduk/index',
           component: () => import('@/views/dashboard/kependudukan/penduduk/Index'),
