@@ -21,6 +21,30 @@
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-fab-transition>
+      <div class="text-right">
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-export
+          </v-icon>
+          Export
+        </v-btn>
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-import
+          </v-icon>
+          Import
+        </v-btn>
+      </div>
       <v-card-title>
         <v-text-field
           v-model="search"
@@ -69,10 +93,11 @@
         deleted: false,
         search: '',
         headers: [
-          { text: 'Jumlah Laki-Laki', value: 'id' },
-          { text: 'Jumlah Perempuan', value: 'jp' },
-          { text: 'Jumlah KK', value: 'jkk' },
-          { text: 'Jumlah RTM', value: 'jrtm' },
+          { text: 'Total Laki-Laki', value: 'total_pria' },
+          { text: 'Total Perempuan', value: 'total_wanita' },
+          { text: 'Total KK', value: 'total_kk' },
+          { text: 'Total RTM', value: 'total_rtm' },
+          { text: 'Action', value: 'action', sortable: false },
         ],
         data_penduduk: [],
       }
@@ -91,7 +116,7 @@
         setAlert: 'alert/set',
       }),
       load () {
-        const url = '/penduduk'
+        const url = '/inf-penduduk'
         this.axios.get(url)
           .then((response) => {
             const { data } = response.data
@@ -103,12 +128,12 @@
       },
       edit (item) {
         this.$router.push({
-          name: 'Form Penduduk', params: { data: item, update: true },
+          name: 'Form Info Penduduk', params: { data: item, update: true },
         })
       },
       del (item) {
         confirm('Yakin ingin menghapus Penduduk dari ' + item.penduduk + '?') &&
-          this.axios.delete('/penduduk/' + item.id).then(res => {
+          this.axios.delete('/inf-penduduk/' + item.id).then(res => {
             this.setAlert({
               status: true,
               text: 'Data Penduduk berhasil dihapus!',

@@ -29,6 +29,11 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/penduduk/Index'),
         },
         {
+          name: 'Form Info Penduduk',
+          path: 'infodesa/penduduk/Form',
+          component: () => import('@/views/dashboard/infodesa/penduduk/Form'),
+        },
+        {
           name: 'Sarana Penunjang',
           path: 'infodesa/Saranapenunjang',
           component: () => import('@/views/dashboard/infodesa/Saranapenunjang'),

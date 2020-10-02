@@ -43,11 +43,11 @@
               label="Email Desa"
               required
             />
-            <v-text-field
+            <!-- <v-text-field
               v-model="form.web"
               label="Website Desa"
               required
-            />
+            /> -->
           </v-col>
           <v-col md="6">
             <v-btn
@@ -83,7 +83,7 @@
           alamat: '',
           telp: '',
           email: '',
-          web: '',
+          // web: '',
         },
         aministrasi: '',
         updateSubmit: false,
@@ -102,7 +102,7 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/administrasi', this.form).then(res => {
+        this.axios.post('/inf-administrasi', this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
@@ -112,7 +112,7 @@
         })
       },
       update () {
-        this.axios.put('/aministrasi/' + this.form.id, this.form).then(res => {
+        this.axios.put('/inf-administrasi/' + this.form.id, this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
