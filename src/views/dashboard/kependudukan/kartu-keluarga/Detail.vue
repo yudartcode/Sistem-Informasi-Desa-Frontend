@@ -97,7 +97,7 @@
           </v-icon>
           <v-icon
             color="red"
-            @click="del(data_kk)"
+            @click="del(item)"
           >
             mdi-delete
           </v-icon>
@@ -123,7 +123,7 @@
         headers: [
           { text: 'NIK', value: 'id' },
           { text: 'Nama', value: 'nama' },
-          // { text: 'Tempat Lahir', value: 'tempat_lahir' },
+          { text: 'Tempat Lahir', value: 'tempat_lahir' },
           { text: 'Tanggal Lahir', value: 'tanggal_lahir' },
           // { text: 'Darah', value: 'darah' },
           { text: 'JK', value: 'jenis_kelamin' },
@@ -132,7 +132,7 @@
           { text: 'Perkawinan', value: 'perkawinan' },
           // { text: 'Kewarganegaraan', value: 'kewarganegaraan' },
           { text: 'Status Hidup', value: 'status_hidup' },
-          { text: 'No KK', value: 'kartukeluarga_id' },
+          // { text: 'No KK', value: 'kartukeluarga_id' },
           { text: 'Action', value: 'action', sortable: false },
         ],
         data_anggota: [],
@@ -178,20 +178,22 @@
         })
       },
       del (item) {
-        confirm('Yakin ingin menghapus ' + item.kepala_keluarga + '?') &&
-          this.axios.delete('/kartu-keluarga/' + item.id).then(res => {
-            this.setAlert({
-              status: true,
-              text: 'Data Kartu Keluarga berhasil dihapus!',
-              color: 'success',
+        console.log(item)
+        confirm('Yakin ingin menghapus ' + item.id + '?') &&
+          this.axios.delete('/penduduk/' + item.id)
+            .then(res => {
+              this.setAlert({
+                status: true,
+                text: 'Data Penduduk berhasil dihapus!',
+                color: 'success',
+              })
+              this.loadAnggota(this.id_kk)
             })
-            this.load()
-          })
       },
       // eslint-disable-next-line camelcase
       addAnggota (id) {
         this.$router.push({
-          name: 'Form Penduduk', params: { data: id, update: true },
+          name: 'Form Penduduk', params: { data: id },
         })
       },
     },

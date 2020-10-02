@@ -224,7 +224,6 @@
       },
       update () {
         this.axios.put('/penduduk/' + this.form.id, this.form).then(res => {
-          this.form = ''
           this.setAlert({
             status: true,
             color: 'success',
