@@ -29,18 +29,43 @@
         <v-row>
           <v-col md="6">
             <v-text-field
-              v-model="form.nama"
-              label="Nama Kades"
+              v-model="form.kades"
+              label="Kepala Desa"
               required
             />
             <v-text-field
-              v-model="form.masajab"
-              label="Masa Jabatan"
+              v-model="form.sekdes"
+              label="Sekertaris Desa"
               required
             />
             <v-text-field
-              v-model="form.telp"
-              label="Telephone"
+              v-model="form.ku_tata_usaha"
+              label="Tata usaha"
+              required
+            />
+            <v-text-field
+              v-model="form.ku_keuangan"
+              label="Keuangan"
+              required
+            />
+            <v-text-field
+              v-model="form.ku_perencanaan"
+              label="Perencanaan"
+              required
+            />
+            <v-text-field
+              v-model="form.ks_pemerintahan"
+              label="Pemerintahan"
+              required
+            />
+            <v-text-field
+              v-model="form.ks_kesejahteraan"
+              label="Kesejahteraan"
+              required
+            />
+            <v-text-field
+              v-model="form.ks_pelayanan"
+              label="Pelayanan"
               required
             />
           </v-col>
@@ -75,9 +100,14 @@
     data () {
       return {
         form: {
-          nama: '',
-          masajab: '',
-          telp: '',
+          kades: '',
+          sekdes: '',
+          ku_tata_usaha: '',
+          ku_keuangan: '',
+          ku_perencanaan: '',
+          ks_pemerintahan: '',
+          ks_kesejahteraan: '',
+          ks_pelayanan: '',
         },
         perangkatdesa: '',
         updateSubmit: false,
@@ -96,7 +126,7 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/perangkatdesa', this.form).then(res => {
+        this.axios.post('/inf-perangkat', this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
@@ -106,7 +136,7 @@
         })
       },
       update () {
-        this.axios.put('/perangkatdesa/' + this.form.id, this.form).then(res => {
+        this.axios.put('/inf-perangkat/' + this.form.id, this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,

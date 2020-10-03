@@ -21,6 +21,30 @@
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-fab-transition>
+      <div class="text-right">
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-export
+          </v-icon>
+          Export
+        </v-btn>
+        <v-btn
+          class="mx-2"
+          dark
+          small
+          color="cyan"
+        >
+          <v-icon dark>
+            mdi-import
+          </v-icon>
+          Import
+        </v-btn>
+      </div>
       <v-card-title>
         <v-text-field
           v-model="search"
@@ -69,22 +93,23 @@
         deleted: false,
         search: '',
         headers: [
-          { text: 'Luas Desa', value: 'id' },
-          { text: 'Jumlah Dusun', value: 'jumlah_dusun' },
+          { text: 'Luas Desa', value: 'luas_desa' },
+          { text: 'Total Dusun', value: 'total_dusun' },
           { text: 'Batas Wilayah Barat', value: 'bw_barat' },
           { text: 'Batas Wilayah Utara', value: 'bw_utara' },
           { text: 'Batas Wilayah Selatan', value: 'bw_selatan' },
           { text: 'Batas Wilayah Timur', value: 'bw_timur' },
-          { text: 'Jarak Dari Pusat Kecamatan', value: 'jdp_kecamatan' },
-          { text: 'Jarak Dari Pusat Kabupaten', value: 'jdp_kabupaten' },
-          { text: 'Jarak Dari Pusat Provinsi', value: 'jdp_provinsi' },
-          { text: 'Status Desa', value: 'status_desa' },
+          { text: 'Jarak Dari Pusat Kecamatan', value: 'jp_kecamatan' },
+          { text: 'Jarak Dari Pusat Kabupaten', value: 'jp_kabupaten' },
+          { text: 'Jarak Dari Pusat Provinsi', value: 'jp_provinsi' },
+          // { text: 'Status Desa', value: 'status_desa' },
+          { text: 'Action', value: 'action', sortable: false },
         ],
         data_umum: [],
       }
     },
     watch: {
-      data_kk () {
+      data_umum () {
         this.progressBar = false
       },
     },
@@ -97,8 +122,7 @@
         setAlert: 'alert/set',
       }),
       load () {
-        const url = '/umum'
-        this.axios.get(url)
+        this.axios.get('/inf-umum')
           .then((response) => {
             const { data } = response.data
             this.data_umum = data
@@ -114,7 +138,7 @@
       },
       del (item) {
         confirm('Yakin ingin menghapus Umum dari ' + item.umum + '?') &&
-          this.axios.delete('/umum/' + item.id).then(res => {
+          this.axios.delete('/inf-umum/' + item.id).then(res => {
             this.setAlert({
               status: true,
               text: 'Data Umum berhasil dihapus!',

@@ -29,58 +29,53 @@
         <v-row>
           <v-col md="6">
             <v-text-field
-              v-model="form.ld"
+              v-model="form.luas_desa"
               label="Luas Desa"
               required
             />
             <v-text-field
-              v-model="form.jd"
-              label="Jumlah Dusun"
+              v-model="form.total_dusun"
+              label="Total Dusun"
               required
             />
             <v-text-field
-              v-model="form.bataswb"
+              v-model="form.bw_barat"
               label="Batas Wilayah Barat"
               required
             />
             <v-text-field
-              v-model="form.bataswu"
+              v-model="form.bw_utara"
               label="Batas Wilayah Utara"
               required
             />
             <v-text-field
-              v-model="form.batasws"
+              v-model="form.bw_selatan"
               label="Batas Wilayah Selatan"
               required
             />
             <v-text-field
-              v-model="form.bataswt"
+              v-model="form.bw_timur"
               label="Batas Wilayah Timur"
               required
             />
           </v-col>
           <v-col md="6">
             <v-text-field
-              v-model="form.jarakdpkec"
+              v-model="form.jp_kecamatan"
               label="Jarak dari Pusat Kecamatan"
               required
               type="number"
             />
             <v-text-field
-              v-model="form.jarakdpkab"
+              v-model="form.jp_Kabupaten"
               label="Jarak dari Pusat Kabupaten"
               type="number"
             />
             <v-text-field
-              v-model="jarakdpprov"
+              v-model="form.jp_provinsi"
               label="Jarak dari Pusat Provinsi"
               required
               type="number"
-            />
-            <v-text-field
-              v-model="form.status"
-              label="Status Desa"
-              required
             />
             <v-btn
               v-show="!updateSubmit"
@@ -112,16 +107,15 @@
     data () {
       return {
         form: {
-          ld: '',
-          jd: '',
-          bataswb: '',
-          bataswu: '',
-          batasws: '',
-          bataswt: '',
-          jarakdpkec: '',
-          jarakdpkab: '',
-          jarakdpprov: '',
-          status: '',
+          luas_desa: '',
+          total_dusun: '',
+          bw_barat: '',
+          bw_utara: '',
+          bw_selatan: '',
+          bw_timur: '',
+          jp_kecamatan: '',
+          jp_kabupaten: '',
+          jp_provinsi: '',
         },
         umum: '',
         updateSubmit: false,
@@ -140,7 +134,7 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/umum', this.form).then(res => {
+        this.axios.post('/inf-umum', this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
@@ -150,7 +144,7 @@
         })
       },
       update () {
-        this.axios.put('/umum/' + this.form.id, this.form).then(res => {
+        this.axios.put('/inf-umum/' + this.form.id, this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,

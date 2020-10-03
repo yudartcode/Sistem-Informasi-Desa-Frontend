@@ -103,7 +103,7 @@
       }
     },
     watch: {
-      data_kk () {
+      data_penduduk () {
         this.progressBar = false
       },
     },
