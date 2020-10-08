@@ -5,7 +5,7 @@
     tag="section"
   >
     <v-row>
-      <v-col
+      <!-- <v-col
         cols="12"
         lg="4"
       >
@@ -163,7 +163,7 @@
             Pengeluaran Desa
           </h3>
         </base-material-chart-card>
-      </v-col>
+      </v-col> -->
 
       <v-col
         cols="12"
@@ -172,8 +172,8 @@
       >
         <base-material-stats-card
           color="info"
-          icon="mdi-twitter"
-          title="Followers"
+          icon="mdi-map-marker-radius"
+          title="Luas Desa"
           value="+245"
           sub-icon="mdi-clock"
           sub-text="Just Updated"
@@ -186,12 +186,26 @@
         lg="3"
       >
         <base-material-stats-card
+          color="orange"
+          icon="mdi-file-account"
+          title="Jumlah KK"
+          value="184"
+          sub-icon="mdi-clock"
+          sub-text="Just Updated"
+        />
+      </v-col>
+      <v-col
+        cols="12"
+        sm="6"
+        lg="3"
+      >
+        <base-material-stats-card
           color="blue"
           icon="mdi-poll"
-          title="Website Visits"
+          title="Populasi"
           value="75.521"
-          sub-icon="mdi-tag"
-          sub-text="Tracked from Google Analytics"
+          sub-icon="mdi-clock"
+          sub-text="Just Updated"
         />
       </v-col>
 
@@ -202,27 +216,11 @@
       >
         <base-material-stats-card
           color="success"
-          icon="mdi-store"
-          title="Revenue"
+          icon="mdi-collage"
+          title="Jumlah Dusun"
           value="$ 34,245"
-          sub-icon="mdi-calendar"
-          sub-text="Last 24 Hours"
-        />
-      </v-col>
-
-      <v-col
-        cols="12"
-        sm="6"
-        lg="3"
-      >
-        <base-material-stats-card
-          color="orange"
-          icon="mdi-sofa"
-          title="Bookings"
-          value="184"
-          sub-icon="mdi-alert"
-          sub-icon-color="red"
-          sub-text="Get More Space..."
+          sub-icon="mdi-clock"
+          sub-text="Just Updated"
         />
       </v-col>
     </v-row>
