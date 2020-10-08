@@ -79,6 +79,7 @@
         :headers="headers"
         :items="data_anggota"
         :loading="true"
+        :loading-text="noData"
         :search="search"
       >
         <v-progress-linear
@@ -114,6 +115,7 @@
     data () {
       return {
         search: '',
+        noData: 'No Data',
         data_kk: {
           id: '',
           kepala_keluarga: '',

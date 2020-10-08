@@ -47,8 +47,10 @@
         </v-btn>
       </div>
       <v-card-title>
+        <v-spacer />
         <v-text-field
           v-model="search"
+          append-icon="mdi-magnify"
           label="Search"
           single-line
           hide-details
@@ -58,6 +60,7 @@
         :headers="headers"
         :items="data_penduduk"
         :loading="true"
+        :loading-text="noData"
         :search="search"
       >
         <v-progress-linear
@@ -92,6 +95,7 @@
     name: 'ListPenduduk',
     data () {
       return {
+        noData: 'No Data',
         search: '',
         headers: [
           { text: 'NIK', value: 'id' },

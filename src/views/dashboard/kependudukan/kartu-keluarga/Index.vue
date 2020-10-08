@@ -46,8 +46,10 @@
         </v-btn>
       </div>
       <v-card-title>
+        <v-spacer />
         <v-text-field
           v-model="search"
+          append-icon="mdi-magnify"
           label="Search"
           single-line
           hide-details
@@ -57,6 +59,7 @@
         :headers="headers"
         :items="data_kk"
         :loading="true"
+        :loading-text="noData"
         :search="search"
       >
         <v-progress-linear
@@ -98,6 +101,7 @@
     data () {
       return {
         deleted: false,
+        noData: 'No Data',
         search: '',
         headers: [
           { text: 'No KK', value: 'id' },
@@ -124,14 +128,17 @@
         setAlert: 'alert/set',
       }),
       load () {
-        const url = '/kartu-keluarga'
-        this.axios.get(url)
+        this.axios.get('/kartu-keluarga')
           .then((response) => {
             const { data } = response.data
             this.data_kk = data
           })
           .catch((error) => {
-            console.log(error.response)
+            this.setAlert({
+              status: true,
+              text: error,
+              color: 'warning',
+            })
           })
       },
       edit (item) {
@@ -141,14 +148,23 @@
       },
       del (item) {
         confirm('Yakin ingin menghapus Kartu Keluarga dari ' + item.kepala_keluarga + '?') &&
-          this.axios.delete('/kartu-keluarga/' + item.id).then(res => {
-            this.setAlert({
-              status: true,
-              text: 'Data Kartu Keluarga berhasil dihapus!',
-              color: 'success',
+          this.axios.delete('/kartu-keluarga/' + item.id)
+            .then((res) => {
+              if (res.data.error === true) {
+                this.setAlert({
+                  status: true,
+                  text: res.data,
+                  color: 'warning',
+                })
+              } else {
+                this.setAlert({
+                  status: true,
+                  text: 'Data Kartu Keluarga Berhasil Dihapus!',
+                  color: 'warning',
+                })
+              }
+              this.load()
             })
-            this.load()
-          })
       },
       toDetail (item) {
         this.$router.push({
