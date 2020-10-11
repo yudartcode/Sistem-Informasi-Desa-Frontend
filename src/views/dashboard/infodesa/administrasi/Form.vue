@@ -36,7 +36,7 @@
             <v-text-field
               v-model="form.telp"
               label="Telephone Kantor"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.email"

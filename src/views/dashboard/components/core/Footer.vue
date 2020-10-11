@@ -10,7 +10,7 @@
       >
         <v-col>
           <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
-            &copy; 2020
+            &copy; 2020 made with
             <v-icon size="18">
               mdi-heart
             </v-icon>

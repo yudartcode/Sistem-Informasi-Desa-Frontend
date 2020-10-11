@@ -31,22 +31,22 @@
             <v-text-field
               v-model="form.total_pria"
               label="Total Laki-Laki"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.total_wanita"
               label="Total Perempuan"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.total_kk"
               label="Total KK"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.total_rtm"
               label="Total RTM"
-              required
+              type="number"
             />
           </v-col>
           <v-col md="6">

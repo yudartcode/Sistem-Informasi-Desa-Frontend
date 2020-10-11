@@ -124,8 +124,7 @@
         setAlert: 'alert/set',
       }),
       load () {
-        const url = '/kartu-keluarga'
-        this.axios.get(url)
+        this.axios.get('/kartu-keluarga')
           .then((response) => {
             const { data } = response.data
             this.data_kk = data
