@@ -1,51 +1,23 @@
 <template>
   <v-footer
     id="dashboard-core-footer"
+    padless
   >
-    <v-container>
-      <v-row
-        align="center"
-        no-gutters
-        justify="center"
-      >
-        <v-col>
-          <div class="body-1 font-weight-light pt-6 pt-md-0 text-center">
-            &copy; 2020 made with
-            <v-icon size="18">
-              mdi-heart
-            </v-icon>
-            by <a href="#">SIDE TEAM</a>.
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
+    <v-col
+      class="body-1 text-center"
+    >
+      &copy; {{ new Date().getFullYear() }}
+      <v-icon size="18">
+        mdi-heart
+      </v-icon>
+      by <a href="#">SIDE TEAM</a>.
+    </v-col>
   </v-footer>
 </template>
 
 <script>
   export default {
     name: 'DashboardCoreFooter',
-
-    data: () => ({
-      links: [
-        {
-          href: '#',
-          text: 'Creative Tim',
-        },
-        {
-          href: '#',
-          text: 'About Us',
-        },
-        {
-          href: '#',
-          text: 'Blog',
-        },
-        {
-          href: '#',
-          text: 'Licenses',
-        },
-      ],
-    }),
   }
 </script>
 

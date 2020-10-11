@@ -43,7 +43,6 @@
               type="number"
             />
             <v-text-field
-              id="dkk"
               v-model="form.kepala_keluarga"
               label="Kepala Keluarga"
               required
@@ -149,18 +148,25 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/kartu-keluarga', this.form).then(res => {
-          this.form = ''
-          this.setAlert({
-            status: true,
-            color: 'success',
-            text: 'Data Kartu Keluarga Berhasil Ditambahkan!',
+        this.axios.post('/kartu-keluarga', this.form)
+          .then((res) => {
+            if (res.data.success === true) {
+              this.setAlert({
+                status: true,
+                color: 'success',
+                text: 'Data Kartu Keluarga Berhasil Ditambahkan!',
+              })
+            } else {
+              this.setAlert({
+                status: true,
+                color: 'warning',
+                text: res.data.message,
+              })
+            }
           })
-        })
       },
       update () {
         this.axios.put('/kartu-keluarga/' + this.form.id, this.form).then(res => {
-          this.form = ''
           this.setAlert({
             status: true,
             color: 'success',

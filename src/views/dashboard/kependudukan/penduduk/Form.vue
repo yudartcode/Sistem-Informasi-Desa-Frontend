@@ -209,17 +209,22 @@
         this.$refs.menu.save(date)
       },
       add () {
-        console.log(this.form)
         this.axios.post('/penduduk', this.form)
-          .then(res => {
-            this.setAlert({
-              status: true,
-              color: 'success',
-              text: 'Data Penduduk Berhasil Ditambahkan!',
-            })
-          })
-          .catch((error) => {
-            console.log(error.response)
+          .then((res) => {
+            console.log(res)
+            if (res.data.success === true) {
+              this.setAlert({
+                status: true,
+                color: 'success',
+                text: 'Data Penduduk Berhasil Ditambahkan!',
+              })
+            } else {
+              this.setAlert({
+                status: true,
+                color: 'warning',
+                text: res.data.message,
+              })
+            }
           })
       },
       update () {
