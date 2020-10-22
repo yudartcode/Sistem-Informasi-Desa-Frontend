@@ -133,6 +133,7 @@
         setAlert: 'alert/set',
       }),
       add () {
+        console.log(this.form)
         this.axios.post('/inf-umum', this.form).then(res => {
           this.form = ''
           this.setAlert({

@@ -126,6 +126,7 @@
           .then((response) => {
             const { data } = response.data
             this.data_umum = data
+            console.log(response)
           })
           .catch((error) => {
             console.log(error.response)

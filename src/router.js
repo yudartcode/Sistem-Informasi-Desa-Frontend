@@ -124,12 +124,6 @@ export default new Router({
           path: 'components/typography',
           component: () => import('@/views/dashboard/component/Typography'),
         },
-        // Tables
-        {
-          name: 'Regular Tables',
-          path: 'tables/regular-tables',
-          component: () => import('@/views/dashboard/tables/RegularTables'),
-        },
         // Maps
         {
           name: 'Letak Geografis',

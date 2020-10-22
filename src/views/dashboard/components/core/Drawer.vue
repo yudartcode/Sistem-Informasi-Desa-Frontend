@@ -161,11 +161,6 @@
             }],
         },
         {
-          title: 'Struktur Organisasi',
-          icon: 'mdi-sitemap',
-          to: '/tables/regular-tables',
-        },
-        {
           title: 'Visi Misi',
           icon: 'mdi-chart-bubble',
           to: '/components/icons',
