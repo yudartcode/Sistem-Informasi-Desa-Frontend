@@ -130,6 +130,11 @@
             },
             {
               icon: '',
+              title: 'Dusun',
+              to: 'dusun/Index',
+            },
+            {
+              icon: '',
               title: 'Potensi Desa',
               to: 'Potensi',
             },
@@ -173,7 +178,7 @@
         {
           title: 'Program Desa',
           icon: 'mdi-briefcase',
-          to: '/components/notifications',
+          to: '/progdes/Index',
         },
       ],
     }),

@@ -34,6 +34,16 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/penduduk/Form'),
         },
         {
+          name: 'Index Info Dusun',
+          path: 'infodesa/dusun/Index',
+          component: () => import('@/views/dashboard/infodesa/dusun/Index'),
+        },
+        {
+          name: 'Form Info Dusun',
+          path: 'infodesa/dusun/Form',
+          component: () => import('@/views/dashboard/infodesa/dusun/Form'),
+        },
+        {
           name: 'Sarana Penunjang',
           path: 'infodesa/Saranapenunjang',
           component: () => import('@/views/dashboard/infodesa/Saranapenunjang'),
@@ -116,8 +126,13 @@ export default new Router({
         },
         {
           name: 'Program Desa',
-          path: 'components/notifications',
-          component: () => import('@/views/dashboard/component/Notifications'),
+          path: 'progdes/index',
+          component: () => import('@/views/dashboard/progdes/Index'),
+        },
+        {
+          name: 'Program Desa',
+          path: 'progdes/form',
+          component: () => import('@/views/dashboard/progdes/Form'),
         },
         {
           name: 'Typography',
