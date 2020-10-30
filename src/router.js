@@ -141,7 +141,7 @@ export default new Router({
           component: () => import('@/views/dashboard/progdes/Index'),
         },
         {
-          name: 'Program Desa',
+          name: 'Form Program Desa',
           path: 'progdes/form',
           component: () => import('@/views/dashboard/progdes/Form'),
         },
