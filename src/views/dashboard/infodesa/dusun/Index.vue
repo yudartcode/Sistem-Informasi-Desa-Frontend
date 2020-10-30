@@ -5,12 +5,12 @@
   >
     <base-material-card
       icon="mdi-clipboard-text"
-      title="Umum"
+      title="Dusun"
       class="px-5 py-3"
     >
       <v-fab-transition>
         <v-btn
-          to="/infodesa/umum/Form"
+          to="/infodesa/dusun/Form"
           color="primary"
           dark
           absolute
@@ -55,7 +55,7 @@
       </v-card-title>
       <v-data-table
         :headers="headers"
-        :items="data_umum"
+        :items="data_dusun"
         :loading="true"
         :search="search"
       >
@@ -93,23 +93,15 @@
         deleted: false,
         search: '',
         headers: [
-          { text: 'Luas Desa', value: 'luas_desa' },
-          { text: 'Total Dusun', value: 'total_dusun' },
-          { text: 'Batas Wilayah Barat', value: 'bw_barat' },
-          { text: 'Batas Wilayah Utara', value: 'bw_utara' },
-          { text: 'Batas Wilayah Selatan', value: 'bw_selatan' },
-          { text: 'Batas Wilayah Timur', value: 'bw_timur' },
-          { text: 'Jarak Dari Pusat Kecamatan', value: 'jp_kecamatan' },
-          { text: 'Jarak Dari Pusat Kabupaten', value: 'jp_kabupaten' },
-          { text: 'Jarak Dari Pusat Provinsi', value: 'jp_provinsi' },
-          // { text: 'Status Desa', value: 'status_desa' },
+          { text: 'Nama Dusun', value: 'nama' },
+          { text: 'Kepala Dusun', value: 'kadus' },
           { text: 'Action', value: 'action', sortable: false },
         ],
-        data_umum: [],
+        data_dusun: [],
       }
     },
     watch: {
-      data_umum () {
+      data_dusun () {
         this.progressBar = false
       },
     },
@@ -122,11 +114,11 @@
         setAlert: 'alert/set',
       }),
       load () {
-        this.axios.get('/inf-umum')
+        const url = '/inf-dusun'
+        this.axios.get(url)
           .then((response) => {
             const { data } = response.data
-            this.data_umum = data
-            console.log(response)
+            this.data_dusun = data
           })
           .catch((error) => {
             console.log(error.response)
@@ -134,15 +126,15 @@
       },
       edit (item) {
         this.$router.push({
-          name: 'Form Umum', params: { data: item, update: true },
+          name: 'Form Info Dusun', params: { data: item, update: true },
         })
       },
       del (item) {
-        confirm('Yakin ingin menghapus Umum dari ' + item.umum + '?') &&
-          this.axios.delete('/inf-umum/' + item.id).then(res => {
+        confirm('Yakin ingin menghapus data dari ' + item.dusun + '?') &&
+          this.axios.delete('/inf-dusun/' + item.id).then(res => {
             this.setAlert({
               status: true,
-              text: 'Data Umum berhasil dihapus!',
+              text: 'Data Dusun berhasil dihapus!',
               color: 'success',
             })
             this.load()

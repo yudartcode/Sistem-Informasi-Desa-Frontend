@@ -130,6 +130,11 @@
             },
             {
               icon: '',
+              title: 'Dusun',
+              to: 'dusun/Index',
+            },
+            {
+              icon: '',
               title: 'Potensi Desa',
               to: 'Potensi',
             },
@@ -161,11 +166,6 @@
             }],
         },
         {
-          title: 'Struktur Organisasi',
-          icon: 'mdi-sitemap',
-          to: '/tables/regular-tables',
-        },
-        {
           title: 'Visi Misi',
           icon: 'mdi-chart-bubble',
           to: '/components/icons',
@@ -178,7 +178,7 @@
         {
           title: 'Program Desa',
           icon: 'mdi-briefcase',
-          to: '/components/notifications',
+          to: '/progdes/Index',
         },
       ],
     }),

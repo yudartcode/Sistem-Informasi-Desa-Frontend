@@ -31,12 +31,12 @@
             <v-text-field
               v-model="form.luas_desa"
               label="Luas Desa"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.total_dusun"
               label="Total Dusun"
-              required
+              type="number"
             />
             <v-text-field
               v-model="form.bw_barat"
@@ -63,7 +63,6 @@
             <v-text-field
               v-model="form.jp_kecamatan"
               label="Jarak dari Pusat Kecamatan"
-              required
               type="number"
             />
             <v-text-field
@@ -134,6 +133,7 @@
         setAlert: 'alert/set',
       }),
       add () {
+        console.log(this.form)
         this.axios.post('/inf-umum', this.form).then(res => {
           this.form = ''
           this.setAlert({

@@ -6,11 +6,11 @@
     <base-material-card
       icon="mdi-clipboard-text"
       class="px-5 py-3"
-      title="Form Penduduk"
+      title="Form Program Desa"
     >
       <v-fab-transition>
         <v-btn
-          to="/infodesa/penduduk/Index"
+          to="/progdes/Index"
           color="secondary"
           dark
           absolute
@@ -29,24 +29,9 @@
         <v-row>
           <v-col md="6">
             <v-text-field
-              v-model="form.total_pria"
-              label="Total Laki-Laki"
-              type="number"
-            />
-            <v-text-field
-              v-model="form.total_wanita"
-              label="Total Perempuan"
-              type="number"
-            />
-            <v-text-field
-              v-model="form.total_kk"
-              label="Total KK"
-              type="number"
-            />
-            <v-text-field
-              v-model="form.total_rtm"
-              label="Total RTM"
-              type="number"
+              v-model="form.program"
+              label="Program Desa"
+              required
             />
           </v-col>
           <v-col md="6">
@@ -80,12 +65,9 @@
     data () {
       return {
         form: {
-          total_pria: '',
-          total_wanita: '',
-          total_kk: '',
-          total_rtm: '',
+          program: '',
         },
-        penduduk: '',
+        progdes: '',
         updateSubmit: false,
       }
     },
@@ -102,22 +84,22 @@
         setAlert: 'alert/set',
       }),
       add () {
-        this.axios.post('/inf-penduduk', this.form).then(res => {
+        this.axios.post('/prog-desa', this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
             color: 'success',
-            text: 'Data Penduduk Berhasil Ditambahkan!',
+            text: 'Data Program Desa Berhasil Ditambahkan!',
           })
         })
       },
       update () {
-        this.axios.put('/inf-penduduk/' + this.form.id, this.form).then(res => {
+        this.axios.put('/prog-desa/' + this.form.id, this.form).then(res => {
           this.form = ''
           this.setAlert({
             status: true,
             color: 'success',
-            text: 'Data Penduduk Berhasil Diupdate!',
+            text: 'Data Program Desa Berhasil Diupdate!',
           })
         })
       },
