@@ -90,7 +90,7 @@
     data: () => ({
       items: [
         { title: 'Profil', icon: 'mdi-account', to: '' },
-        { title: 'Logout', icon: 'mdi-logout', to: 'auth/logout' },
+        { title: 'Logout', icon: 'mdi-logout', to: '/auth/logout' },
       ],
     }),
     computed: {

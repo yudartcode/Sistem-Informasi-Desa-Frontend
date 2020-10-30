@@ -36,18 +36,18 @@
             <v-text-field
               v-model="form.id"
               label="NIK"
-              required
+              :rules="rules"
               type="number"
             />
             <v-text-field
               v-model="form.nama"
               label="Nama"
-              required
+              :rules="rules"
             />
             <v-text-field
               v-model="form.tempat_lahir"
               label="Tempat Lahir"
-              required
+              :rules="rules"
             />
             <template>
               <v-menu
@@ -64,6 +64,7 @@
                     label="Tanggal Lahir"
                     readonly
                     v-bind="attrs"
+                    :rules="rules"
                     v-on="on"
                   />
                 </template>
@@ -80,11 +81,12 @@
               v-model="form.jenis_kelamin"
               :items="jk"
               label="Jenis Kelamin"
-              required
+              :rules="rules"
             />
             <v-select
               v-model="form.agama"
               :items="agama"
+              :rules="rules"
               label="Agama"
             />
             <v-select
@@ -96,12 +98,13 @@
           <v-col md="6">
             <v-text-field
               v-model="form.alamat"
+              :rules="rules"
               label="Alamat"
             />
             <v-text-field
               v-model="form.rt"
               label="RT"
-              required
+              :rules="rules"
               type="number"
             />
             <v-text-field
@@ -112,19 +115,24 @@
             <v-text-field
               v-model="form.kelurahan"
               label="Kelurahan"
+              :rules="rules"
             />
             <v-text-field
               v-model="form.kecamatan"
               label="Kecamatan"
+              :rules="rules"
             />
             <v-select
               v-model="form.perkawinan"
               :items="perkawinan"
               label="Status Perkawinan"
+              :rules="rules"
             />
-            <v-text-field
+            <v-select
               v-model="form.kewarganegaraan"
+              :items="wn"
               label="Kewarganegaraan"
+              :rules="rules"
             />
             <v-select
               v-model="form.status_hidup"
@@ -165,6 +173,7 @@
         gd: ['A', 'AB', 'B', 'O'],
         perkawinan: ['Belum', 'Sudah'],
         status_hidup: ['Hidup', 'Meninggal'],
+        wn: ['Indonesia', 'WNA'],
         form: {
           id: '',
           nama: '',
@@ -185,6 +194,9 @@
         },
         updateSubmit: false,
         menu: false,
+        rules: [
+          value => !!value || 'Tidak boleh kosong.',
+        ],
       }
     },
     watch: {

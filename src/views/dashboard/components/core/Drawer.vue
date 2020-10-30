@@ -161,8 +161,8 @@
             },
             {
               icon: '',
-              title: 'Report',
-              to: 'Report',
+              title: 'ImportExport',
+              to: 'ImportExport',
             }],
         },
         {

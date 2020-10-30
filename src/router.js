@@ -126,9 +126,9 @@ export default new Router({
           component: () => import('@/views/dashboard/kependudukan/penduduk/Form'),
         },
         {
-          name: 'Report',
-          path: 'kependudukan/Report',
-          component: () => import('@/views/dashboard/kependudukan/Report'),
+          name: 'ImportExport',
+          path: 'kependudukan/ImportExport',
+          component: () => import('@/views/dashboard/kependudukan/ImportExport'),
         },
         {
           name: 'Visi Misi',
