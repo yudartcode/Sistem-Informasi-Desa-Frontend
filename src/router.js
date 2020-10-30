@@ -84,11 +84,11 @@ export default new Router({
           path: 'infodesa/administrasi/Form',
           component: () => import('@/views/dashboard/infodesa/administrasi/Form'),
         },
-        {
-          name: 'Potensi',
-          path: 'infodesa/potensi',
-          component: () => import('@/views/dashboard/infodesa/Potensi'),
-        },
+        // {
+        //   name: 'Potensi',
+        //   path: 'infodesa/potensi',
+        //   component: () => import('@/views/dashboard/infodesa/Potensi'),
+        // },
         {
           name: 'Index Umum',
           path: 'infodesa/umum/index',
@@ -99,11 +99,11 @@ export default new Router({
           path: 'infodesa/umum/Form',
           component: () => import('@/views/dashboard/infodesa/umum/Form'),
         },
-        {
-          name: 'Produk Unggulan',
-          path: 'infodesa/produkunggulan',
-          component: () => import('@/views/dashboard/infodesa/Produkunggulan'),
-        },
+        // {
+        //   name: 'Produk Unggulan',
+        //   path: 'infodesa/produkunggulan',
+        //   component: () => import('@/views/dashboard/infodesa/Produkunggulan'),
+        // },
         // kependudukan
         {
           name: 'Index Kartu Keluarga',
@@ -135,11 +135,11 @@ export default new Router({
           path: 'kependudukan/ImportExport',
           component: () => import('@/views/dashboard/kependudukan/ImportExport'),
         },
-        {
-          name: 'Visi Misi',
-          path: 'components/icons',
-          component: () => import('@/views/dashboard/component/Icons'),
-        },
+        // {
+        //   name: 'Visi Misi',
+        //   path: 'components/icons',
+        //   component: () => import('@/views/dashboard/component/Icons'),
+        // },
         {
           name: 'Program Desa',
           path: 'progdes/index',

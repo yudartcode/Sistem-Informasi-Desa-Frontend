@@ -133,16 +133,17 @@
               title: 'Dusun',
               to: 'dusun/Index',
             },
-            {
-              icon: '',
-              title: 'Potensi Desa',
-              to: 'Potensi',
-            },
-            {
-              icon: '',
-              title: 'Produk Unggulan',
-              to: 'Produkunggulan',
-            }],
+            // {
+            //   icon: '',
+            //   title: 'Potensi Desa',
+            //   to: '/#',
+            // },
+            // {
+            //   icon: '',
+            //   title: 'Produk Unggulan',
+            //   to: '/#',
+            // }
+          ],
         },
         {
           title: 'Kependudukan',
@@ -168,7 +169,7 @@
         {
           title: 'Visi Misi',
           icon: 'mdi-chart-bubble',
-          to: '/components/icons',
+          to: '#',
         },
         {
           title: 'Letak Geografis',
