@@ -9,7 +9,7 @@ export default new Router({
   routes: [
     {
       name: 'Login',
-      path: '/login',
+      path: '/pages/login',
       component: () => import('@/views/dashboard/pages/Login'),
     },
     {
