@@ -5,6 +5,7 @@
         class="fill-height"
         fluid
       >
+        <alert />
         <v-row
           align="center"
           justify="center"
@@ -27,6 +28,7 @@
                     name="login"
                     prepend-icon="mdi-account"
                     type="text"
+                    :rules="rules"
                   />
 
                   <v-text-field
@@ -35,6 +37,7 @@
                     name="password"
                     prepend-icon="mdi-lock"
                     type="password"
+                    :rules="rules"
                   />
                 </v-card-text>
                 <v-card-actions>
@@ -42,7 +45,16 @@
                   <v-btn
                     type="submit"
                     color="primary"
+                    :disabled="loading"
                   >
+                    <div
+                      v-if="loading"
+                    >
+                      <div
+                        disabled
+                      />
+                      Loading...
+                    </div>
                     Login
                   </v-btn>
                 </v-card-actions>
@@ -60,20 +72,45 @@
 
   export default {
     name: 'Login',
+    components: {
+      Alert: () => import('../components/core/Alert.vue'),
+    },
     data () {
       return {
         username: '',
         password: '',
+        loading: false,
+        serverError: '',
+        rules: [
+          value => !!value || 'Required.',
+          value => (value && value.length >= 3) || 'Min 3 characters',
+        ],
       }
     },
     methods: {
       login () {
+        this.loading = true
         this.$store.dispatch('retriveToken', {
           username: this.username,
           password: this.password,
         })
           .then(response => {
-            this.$router.push({ name: 'Dashboard' })
+            this.loading = false
+            console.log(response.data)
+            if (response.data.success === true) {
+              this.$router.push({ name: 'Dashboard' })
+            } else if (response.data.success === false) {
+              this.setAlert({
+                status: true,
+                color: 'warning',
+                text: 'User atau password salah!',
+              })
+            }
+          })
+          .catch(error => {
+            this.loading = false
+            this.serverError = error.response.data
+            this.password = ''
           })
       },
       ...mapActions({
