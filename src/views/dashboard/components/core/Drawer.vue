@@ -105,13 +105,13 @@
           group: '/infodesa',
           children: [
             {
-              title: 'penduduk',
+              title: 'Penduduk',
               to: 'penduduk/Index',
             },
             {
               icon: '',
-              title: 'Sarana Penunjang',
-              to: 'Saranapenunjang',
+              title: 'Sarana',
+              to: 'sarana/index',
             },
             {
               icon: '',

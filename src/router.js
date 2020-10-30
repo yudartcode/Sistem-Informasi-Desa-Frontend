@@ -44,9 +44,14 @@ export default new Router({
           component: () => import('@/views/dashboard/infodesa/dusun/Form'),
         },
         {
-          name: 'Sarana Penunjang',
-          path: 'infodesa/Saranapenunjang',
-          component: () => import('@/views/dashboard/infodesa/Saranapenunjang'),
+          name: 'Index Info Sarana',
+          path: 'infodesa/sarana/Index',
+          component: () => import('@/views/dashboard/infodesa/sarana/Index'),
+        },
+        {
+          name: 'Form Info Sarana',
+          path: 'infodesa/sarana/Form',
+          component: () => import('@/views/dashboard/infodesa/sarana/Form'),
         },
         {
           name: 'Index Perangkat Desa',
