@@ -8,13 +8,24 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      name: 'Login',
-      path: '/pages/login',
-      component: () => import('@/views/dashboard/pages/Login'),
+      name: 'login',
+      path: '/auth/login',
+      component: () => import('@/views/dashboard/auth/Login'),
+      meta: {
+        requiresVisitor: true,
+      },
+    },
+    {
+      name: 'logout',
+      path: '/auth/logout',
+      component: () => import('@/views/dashboard/auth/Logout'),
     },
     {
       path: '/',
       component: () => import('@/views/dashboard/Index'),
+      meta: {
+        requiresAuth: true,
+      },
       children: [
         // Dashboard
         {
