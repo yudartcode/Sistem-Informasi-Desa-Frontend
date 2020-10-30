@@ -8,13 +8,24 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      name: 'Login',
-      path: '/login',
-      component: () => import('@/views/dashboard/pages/Login'),
+      name: 'login',
+      path: '/auth/login',
+      component: () => import('@/views/dashboard/auth/Login'),
+      meta: {
+        requiresVisitor: true,
+      },
+    },
+    {
+      name: 'logout',
+      path: '/auth/logout',
+      component: () => import('@/views/dashboard/auth/Logout'),
     },
     {
       path: '/',
       component: () => import('@/views/dashboard/Index'),
+      meta: {
+        requiresAuth: true,
+      },
       children: [
         // Dashboard
         {
@@ -120,9 +131,9 @@ export default new Router({
           component: () => import('@/views/dashboard/kependudukan/penduduk/Form'),
         },
         {
-          name: 'Report',
-          path: 'kependudukan/Report',
-          component: () => import('@/views/dashboard/kependudukan/Report'),
+          name: 'ImportExport',
+          path: 'kependudukan/ImportExport',
+          component: () => import('@/views/dashboard/kependudukan/ImportExport'),
         },
         {
           name: 'Visi Misi',
@@ -135,7 +146,7 @@ export default new Router({
           component: () => import('@/views/dashboard/progdes/Index'),
         },
         {
-          name: 'Program Desa',
+          name: 'Form Program Desa',
           path: 'progdes/form',
           component: () => import('@/views/dashboard/progdes/Form'),
         },

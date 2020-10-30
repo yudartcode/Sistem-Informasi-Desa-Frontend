@@ -39,35 +39,35 @@
               v-if="!updateSubmit"
               v-model="form.id"
               label="No. Kartu Keluarga"
-              required
+              :rules="rules"
               type="number"
             />
             <v-text-field
               v-model="form.kepala_keluarga"
               label="Kepala Keluarga"
-              required
+              :rules="rules"
             />
             <v-text-field
               v-model="form.provinsi"
               label="Provinsi"
-              required
+              :rules="rules"
             />
             <v-text-field
               v-model="form.kabupaten"
               label="Kabupaten"
-              required
+              :rules="rules"
             />
             <v-text-field
               v-model="form.kecamatan"
               label="Kecamatan"
-              required
+              :rules="rules"
             />
           </v-col>
           <v-col md="6">
             <v-text-field
               v-model="form.kelurahan"
               label="Kelurahan"
-              required
+              :rules="rules"
             />
             <v-text-field
               v-model="form.kode_pos"
@@ -77,7 +77,7 @@
             <v-text-field
               v-model="form.rt"
               label="RT"
-              required
+              :rules="rules"
               type="number"
             />
             <v-text-field
@@ -88,7 +88,7 @@
             <v-text-field
               v-model="form.alamat"
               label="Alamat"
-              required
+              :rules="rules"
             />
             <v-btn
               v-show="!updateSubmit"
@@ -133,6 +133,9 @@
         },
         kartuKeluarga: '',
         updateSubmit: false,
+        rules: [
+          value => !!value || 'Tidak boleh kosong.',
+        ],
       }
     },
     created () {
