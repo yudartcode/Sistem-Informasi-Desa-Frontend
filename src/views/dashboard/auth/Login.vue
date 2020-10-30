@@ -55,7 +55,14 @@
                       />
                       Loading...
                     </div>
-                    Login
+                    <div
+                      v-if="!loading"
+                    >
+                      <div
+                        disabled
+                      />
+                      Login
+                    </div>
                   </v-btn>
                 </v-card-actions>
               </v-form>
